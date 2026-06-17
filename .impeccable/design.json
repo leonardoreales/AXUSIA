@@ -1,0 +1,165 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-12T00:00:00Z",
+  "title": "Design System: AXUS IA",
+  "extensions": {
+    "colorMeta": {
+      "pitch-black":   { "role": "neutral",   "displayName": "Pitch Black",   "canonical": "#080B10", "tonalRamp": ["#010103", "#080B10", "#0d1019", "#131722", "#1a2030", "#232b3f", "#2e3850", "#3d4a68"] },
+      "system-shell":  { "role": "neutral",   "displayName": "System Shell",  "canonical": "#0F1420", "tonalRamp": ["#050710", "#0F1420", "#141a2a", "#1a2035", "#212740", "#2a3050", "#343b60", "#404870"] },
+      "deep-shell":    { "role": "neutral",   "displayName": "Deep Shell",    "canonical": "#161C2E", "tonalRamp": ["#08091a", "#161C2E", "#1c2238", "#222843", "#2a3052", "#333a62", "#3e4570", "#4a5280"] },
+      "layer-stack":   { "role": "neutral",   "displayName": "Layer Stack",   "canonical": "#1E2640", "tonalRamp": ["#0a0d20", "#1E2640", "#242d4c", "#2c3558", "#343e68", "#3e4878", "#4a5488", "#576198"] },
+      "signal-amber":  { "role": "primary",   "displayName": "Signal Amber",  "canonical": "#E8943A", "tonalRamp": ["#3d1e05", "#6b3410", "#9a4e1c", "#c46828", "#e8943a", "#f0a856", "#f5be7e", "#fad4a8"] },
+      "active-pulse":  { "role": "secondary", "displayName": "Active Pulse",  "canonical": "#4ECDC4", "tonalRamp": ["#082e2c", "#0f4a47", "#1a6e6a", "#2e9490", "#4ECDC4", "#72d8d1", "#9ae3de", "#c0edea"] },
+      "ghost-white":   { "role": "neutral",   "displayName": "Ghost White",   "canonical": "#F0EEE8", "tonalRamp": ["#4a4840", "#6e6c65", "#928f88", "#b5b3ae", "#d0ceca", "#e0deda", "#ece9e4", "#F0EEE8"] },
+      "static":        { "role": "neutral",   "displayName": "Static",        "canonical": "#7A8398", "tonalRamp": ["#1e2430", "#2e3648", "#3e4860", "#546078", "#7A8398", "#96a0b2", "#b2baca", "#cdd2dc"] },
+      "dead-channel":  { "role": "neutral",   "displayName": "Dead Channel",  "canonical": "#4A5168", "tonalRamp": ["#121620", "#1e2330", "#2a3040", "#374050", "#4A5168", "#606880", "#7a8298", "#96a0b2"] }
+    },
+    "typographyMeta": {
+      "display":  { "displayName": "Display",  "purpose": "Hero headlines only. One per section maximum." },
+      "headline": { "displayName": "Headline", "purpose": "Section titles. Primary content hierarchy." },
+      "title":    { "displayName": "Title",    "purpose": "Card titles, panel headings, service names." },
+      "body":     { "displayName": "Body",     "purpose": "All running text. Max 65ch line width." },
+      "label":    { "displayName": "Label",    "purpose": "Category tags and eyebrows. Max 40% of sections per page." }
+    },
+    "shadows": [
+      {
+        "name": "accent-glow-rest",
+        "value": "0 0 28px rgba(232,148,58,0.30)",
+        "purpose": "Primary button at rest. Signals action availability."
+      },
+      {
+        "name": "accent-glow-hover",
+        "value": "0 0 40px rgba(232,148,58,0.50)",
+        "purpose": "Primary button on hover. Amplifies action signal."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-expo",
+        "value": "cubic-bezier(0.16,1,0.3,1)",
+        "purpose": "All transitions and scroll reveals. Snappy exponential — ease out, never bounce."
+      },
+      {
+        "name": "reveal-duration",
+        "value": "650ms",
+        "purpose": "Scroll reveal fade-up duration. translateY(28px) to 0."
+      },
+      {
+        "name": "transition-fast",
+        "value": "200ms",
+        "purpose": "Button color, border, and nav link state transitions."
+      },
+      {
+        "name": "logo-draw",
+        "value": "1200ms cubic-bezier(0.16,1,0.3,1)",
+        "purpose": "GSAP stroke-dashoffset draw on Logo SVG. Page load only, once per session."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm",  "value": "640px" },
+      { "name": "md",  "value": "768px" },
+      { "name": "lg",  "value": "1024px" },
+      { "name": "xl",  "value": "1280px" },
+      { "name": "2xl", "value": "1440px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main CTA. Signal Amber fill with glow. Mouse-follow spring + tap scale.",
+      "html": "<button class=\"ds-btn-primary\">Solicitar cotización</button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 54px; padding: 0 36px; background: #E8943A; color: #080B10; font-family: 'Syne', sans-serif; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; border: 1px solid #E8943A; border-radius: 2px; cursor: pointer; position: relative; overflow: hidden; box-shadow: 0 0 28px rgba(232,148,58,0.30); transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease; } .ds-btn-primary:hover { background: #d4832e; border-color: #d4832e; box-shadow: 0 0 40px rgba(232,148,58,0.50); } .ds-btn-primary:focus-visible { outline: 2px solid #E8943A; outline-offset: 3px; border-radius: 2px; } .ds-btn-primary:active { transform: scale(0.97); } .ds-btn-primary:disabled { opacity: 0.4; cursor: not-allowed; pointer-events: none; }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action. Transparent with border, upgrades to Signal Amber on hover.",
+      "html": "<button class=\"ds-btn-secondary\">Ver servicios</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 28px; background: transparent; color: #F0EEE8; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; border: 1px solid rgba(255,255,255,0.18); border-radius: 2px; cursor: pointer; transition: border-color 200ms ease, color 200ms ease, box-shadow 200ms ease; } .ds-btn-secondary:hover { border-color: #E8943A; color: #E8943A; box-shadow: 0 0 20px rgba(232,148,58,0.12); } .ds-btn-secondary:focus-visible { outline: 2px solid #E8943A; outline-offset: 3px; } .ds-btn-secondary:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Tertiary action. No border, muted text, upgrades to Ghost White on hover.",
+      "html": "<button class=\"ds-btn-ghost\">Cancelar</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 44px; padding: 0 28px; background: transparent; color: #7A8398; font-family: 'Syne', sans-serif; font-size: 14px; font-weight: 600; letter-spacing: 0.04em; border: 1px solid transparent; border-radius: 2px; cursor: pointer; transition: color 200ms ease; } .ds-btn-ghost:hover { color: #F0EEE8; } .ds-btn-ghost:focus-visible { outline: 2px solid #E8943A; outline-offset: 3px; } .ds-btn-ghost:active { transform: scale(0.97); }"
+    },
+    {
+      "name": "Availability Chip",
+      "kind": "chip",
+      "refersTo": null,
+      "description": "Status indicator: 'Disponible en Barranquilla'. Amber dot blinks. One per page.",
+      "html": "<div class=\"ds-chip\"><span class=\"ds-chip-dot\"></span>Disponible en Barranquilla</div>",
+      "css": ".ds-chip { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; background: rgba(232,148,58,0.15); color: #F0EEE8; font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; border: 1px solid rgba(232,148,58,0.20); border-radius: 9999px; } .ds-chip-dot { width: 6px; height: 6px; background: #E8943A; border-radius: 50%; flex-shrink: 0; animation: ds-blink 1.6s ease-in-out infinite; } @keyframes ds-blink { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }"
+    },
+    {
+      "name": "Service Card",
+      "kind": "card",
+      "refersTo": null,
+      "description": "Standard content card. System Shell bg at rest, Deep Shell on hover. 2px radius. No shadow.",
+      "html": "<div class=\"ds-card\"><div class=\"ds-card-tag\">Automatización</div><h3 class=\"ds-card-title\">Agente IA para soporte</h3><p class=\"ds-card-body\">Automatiza la atención al cliente 24/7 con un agente entrenado en tu base de conocimiento.</p></div>",
+      "css": ".ds-card { padding: 28px; background: #0F1420; border: 1px solid rgba(255,255,255,0.07); border-radius: 4px; transition: background 200ms ease, border-color 200ms ease; } .ds-card:hover { background: #161C2E; border-color: rgba(255,255,255,0.12); } .ds-card-tag { font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #E8943A; margin-bottom: 12px; } .ds-card-title { font-family: 'Syne', sans-serif; font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 700; color: #F0EEE8; line-height: 1.2; letter-spacing: -0.25px; margin-bottom: 12px; } .ds-card-body { font-family: 'DM Sans', sans-serif; font-size: 0.9375rem; font-weight: 300; color: #7A8398; line-height: 1.6; }"
+    },
+    {
+      "name": "Text Input",
+      "kind": "input",
+      "refersTo": null,
+      "description": "Form field. Dark surface, white border at rest, Signal Amber focus ring.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-label\" for=\"email\">Correo electrónico</label><input class=\"ds-input\" id=\"email\" type=\"email\" placeholder=\"tucorreo@empresa.com\" /></div>",
+      "css": ".ds-field { display: flex; flex-direction: column; gap: 8px; } .ds-label { font-family: 'Syne', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.5px; color: #F0EEE8; } .ds-input { height: 48px; padding: 0 16px; background: #0F1420; color: #F0EEE8; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 300; border: 1px solid rgba(255,255,255,0.18); border-radius: 4px; outline: none; transition: border-color 200ms ease; } .ds-input::placeholder { color: #7A8398; } .ds-input:focus { border-color: #E8943A; outline: 2px solid rgba(232,148,58,0.30); outline-offset: 1px; } .ds-input:disabled { opacity: 0.5; cursor: not-allowed; }"
+    },
+    {
+      "name": "Section Eyebrow",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Label + accent line. Signal Amber uppercase Syne. Max 40% of sections per page.",
+      "html": "<div class=\"ds-eyebrow\">Nuestros Servicios</div>",
+      "css": ".ds-eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; font-family: 'Syne', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #E8943A; } .ds-eyebrow::after { content: ''; width: 40px; height: 1px; background: #E8943A; opacity: 0.5; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "El Terminal con Pulso",
+    "overview": "AXUS IA habita la estética del entorno de trabajo de alta precisión: la claridad del CLI, la densidad informativa de una workstation de ingeniería, la quietud funcional del terminal. No es oscuro por tendencia, es oscuro porque es el ambiente natural donde se construye y opera inteligencia artificial. El naranjo Signal Amber aparece como el cursor que parpadea en la línea de comandos: infrecuente, cargado de significado, siempre indicando que algo está listo para ejecutarse. El teal Active Pulse señala procesos en marcha, sistemas respondiendo, datos fluyendo.\n\nEl sistema rechaza tres caminos: el SaaS amigable-pastel (Canva, Notion) que diluye la propuesta técnica; las consultoras corporativas en azul marino que priorizan la distancia; y los clones de OpenAI con gradientes azul-púrpura que convirtieron 'IA' en un género visual saturado. AXUS IA no declara que hace IA, demuestra que la hace con cada decisión de diseño.",
+    "keyCharacteristics": [
+      "Tema oscuro intencional, no derivativo del hype IA",
+      "Signal Amber y Active Pulse como señales operacionales, no decoración",
+      "Syne pesado (800) para display, DM Sans ligero (300) para cuerpo",
+      "Esquinas casi rectas (2px): precisión sobre suavidad",
+      "Elevación tonal, sin box-shadow posicional en superficies",
+      "Grain textural sutil sobre el fondo (no glassmorphism)"
+    ],
+    "rules": [
+      { "name": "The Signal Rule", "body": "Signal Amber ocupa ≤15% de cualquier pantalla. Su poder viene de la escasez: cuando aparece, indica acción. Diluirlo en fondos, texto de soporte o decoración destruye esa señal.", "section": "colors" },
+      { "name": "The Tonal Depth Rule", "body": "La profundidad emerge de la escala de superficies (pitch-black → system-shell → deep-shell → layer-stack), no de sombras. Nunca usar box-shadow con y-offset positivo en superficies de contenido.", "section": "colors" },
+      { "name": "The Weight Contrast Rule", "body": "Syne para estructura (titulares, labels), DM Sans para lectura (cuerpo, UI). Nunca Syne 700/800 en texto de cuerpo corrido.", "section": "typography" },
+      { "name": "The One Eyebrow Rule", "body": "Máximo en el 40% de las secciones de cualquier página. Eyebrow en cada sección es AI grammar. Eyebrow deliberado es voz de marca.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Las superficies son planas en reposo. Los halos de acento solo existen en botones primarios. Box-shadow con offset Y positivo en tarjetas importa la estética SaaS-flotante que el sistema rechaza.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do mantener Signal Amber en ≤15% de la superficie visible de cualquier pantalla.",
+      "Do usar la escala tonal (pitch-black → layer-stack) para indicar jerarquía de profundidad.",
+      "Do verificar contraste WCAG AAA (7:1) para todo texto body.",
+      "Do usar Syne exclusivamente para titulares, labels y logotipo. DM Sans para todo texto de cuerpo y UI.",
+      "Do mantener radius en 2px en componentes de acción.",
+      "Do incluir prefers-reduced-motion: reduce en todas las animaciones.",
+      "Do nombrar cada CTA con verbo + objeto: 'Solicitar cotización', 'Ver servicios'.",
+      "Do usar text-wrap: balance en H1–H3."
+    ],
+    "donts": [
+      "Don't usar paleta pastel, formas muy redondeadas (>8px en acciones) o tono amigable-casual.",
+      "Don't usar azul marino, gris corporativo frío, o estética de consultora distante.",
+      "Don't usar gradientes azul-púrpura, neón sobre negro, o glows en colores distintos al Signal Amber/Active Pulse.",
+      "Don't usar border-left o border-right > 1px como stripe de acento decorativo.",
+      "Don't usar background-clip: text con gradiente. Gradient text está prohibido.",
+      "Don't glassmorphism decorativo.",
+      "Don't poner .t-label / .eyebrow en cada sección.",
+      "Don't usar números de sección (01/02/03) como scaffolding por defecto.",
+      "Don't usar frases vacías: 'transformamos tu negocio', 'soluciones de vanguardia'.",
+      "Don't aplicar la animación GSAP de draw del logo en cualquier otro contexto."
+    ]
+  }
+}

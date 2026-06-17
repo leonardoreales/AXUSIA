@@ -1,26 +1,154 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
+/* ─── DESIGN TOKENS ──────────────────────────────────────────────── */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  /* Background / Surface */
+  --color-bg:       #080B10;
+  --color-surface:  #0F1420;
+  --color-surface2: #161C2E;
+  --color-surface3: #1E2640;
+
+  /* Accent */
+  --color-accent:      #E8943A;
+  --color-accent-dim:  rgba(232,148,58,0.15);
+  --color-accent-glow: rgba(232,148,58,0.08);
+  --color-teal:        #4ECDC4;
+  --color-teal-dim:    rgba(78,205,196,0.12);
+
+  /* Text */
+  --color-text:   #F0EEE8;
+  --color-muted:  #7A8398;
+  --color-muted2: #4A5168;
+
+  /* Borders */
+  --color-border:  rgba(255,255,255,0.07);
+  --color-border2: rgba(255,255,255,0.12);
+
+  /* Fonts */
+  --font-display: 'Syne', sans-serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Easing */
+  --ease-expo: cubic-bezier(0.16,1,0.3,1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* ─── RESET & BASE ───────────────────────────────────────────────── */
+/* Wrapped in @layer base so Tailwind's utilities (@layer utilities, which
+   comes after base) win over this universal reset. Without the layer, the
+   unlayered universal reset `* { margin:0; padding:0 }` overrides every
+   padding and margin utility site-wide — Tailwind v4 ranks unlayered CSS
+   above any @layer. */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    overflow-x: hidden;
+    line-height: 1.6;
+    min-height: 100dvh;
   }
+
+  ::selection { background: var(--color-accent); color: #000; }
+  a  { text-decoration: none; color: inherit; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 3px; border-radius: 2px; }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* ─── SCROLLBAR ──────────────────────────────────────────────────── */
+::-webkit-scrollbar       { width: 4px; }
+::-webkit-scrollbar-track { background: var(--color-bg); }
+::-webkit-scrollbar-thumb { background: var(--color-muted2); border-radius: 2px; }
+
+/* ─── GRAIN OVERLAY ──────────────────────────────────────────────── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+  opacity: .5;
+}
+
+/* ─── TYPOGRAPHY HELPERS ─────────────────────────────────────────── */
+.t-display {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.0;
+}
+.t-head {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+.t-label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+.t-muted { color: var(--color-muted); }
+
+/* ─── LAYOUT HELPERS ─────────────────────────────────────────────── */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 96px);
+}
+.container-wide {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 96px);
+}
+.container-sm {
+  max-width: 880px;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 96px);
+}
+
+/* ─── EYEBROW ────────────────────────────────────────────────────── */
+.eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.eyebrow::after { content: ''; width: 40px; height: 1px; background: var(--color-accent); opacity: .5; }
+
+/* ─── DIVIDER ────────────────────────────────────────────────────── */
+.divider { height: 1px; background: var(--color-border); }
+
+/* ─── SCROLL REVEAL ──────────────────────────────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity .65s var(--ease-expo), transform .65s var(--ease-expo);
+}
+.reveal.in { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: .1s; }
+.reveal-d2 { transition-delay: .2s; }
+.reveal-d3 { transition-delay: .3s; }
+
+/* ─── KEYFRAMES ──────────────────────────────────────────────────── */
+@keyframes fadeUp   { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
+@keyframes breathe  { 0%,100%{transform:scale(1);opacity:.7} 50%{transform:scale(1.08);opacity:1} }
+@keyframes float    { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-14px) rotate(1deg)} }
+@keyframes blink    { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
+@keyframes slideDown{ from{opacity:0;transform:translateY(-12px)} to{opacity:1;transform:translateY(0)} }
+
+/* ─── REDUCED MOTION ─────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
 }

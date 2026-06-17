@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# debug screenshots (playwright / manual captures)
+/*.png
+
+# tooling artifacts
+.claude/
+.graphify_python
+.playwright-mcp/
+.superpowers/
+graphify-out/
