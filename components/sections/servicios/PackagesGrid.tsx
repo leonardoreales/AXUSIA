@@ -11,11 +11,11 @@ function Check({ accent }: { accent?: boolean }) {
     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden className="shrink-0 mt-0.5">
       <circle
         cx="7" cy="7" r="6"
-        stroke={accent ? "rgba(232,148,58,0.3)" : "rgba(255,255,255,0.1)"}
+        stroke={accent ? "rgba(180,189,210,0.3)" : "rgba(255,255,255,0.1)"}
       />
       <path
         d="M4.5 7l2 2 3-3"
-        stroke={accent ? "#E8943A" : "#7A8398"}
+        stroke={accent ? "#B4BDD2" : "#7A8398"}
         strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"
       />
     </svg>
@@ -77,7 +77,7 @@ export function PackagesGrid() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.6, ease: EASE }}
             className="relative flex flex-col gap-7 p-8 lg:p-10 rounded-[4px]
-              border border-[rgba(232,148,58,0.35)] bg-[rgba(232,148,58,0.04)]"
+              border border-[rgba(180,189,210,0.35)] bg-[rgba(180,189,210,0.04)]"
           >
             {/* Popular badge — left-pinned, not centered */}
             <div className="absolute -top-3 left-8">
@@ -116,7 +116,7 @@ export function PackagesGrid() {
               ))}
             </ul>
 
-            <div className="h-px" style={{ background: "rgba(232,148,58,0.15)" }} />
+            <div className="h-px" style={{ background: "rgba(180,189,210,0.15)" }} />
 
             <Button
               variant="primary"

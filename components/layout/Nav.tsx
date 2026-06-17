@@ -46,9 +46,7 @@ export function Nav() {
     return () => ctx.revert();
   }, []);
 
-  /* ─── Close menu on route change / body lock ──────────── */
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
-
+  /* ─── Body lock ───────────────────────────────────────── */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
@@ -110,6 +108,23 @@ export function Nav() {
 
             {/* Right: CTA + hamburger */}
             <div className="flex items-center gap-3">
+              <div
+                data-nav-item
+                className="hidden xl:flex items-center gap-2 px-3 py-2
+                           font-[family-name:var(--font-syne)] text-[11px] font-semibold
+                           uppercase tracking-[0.14em] text-teal"
+              >
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" aria-hidden>
+                  <path
+                    d="M20 10c0 5.5-8 11-8 11s-8-5.5-8-11a8 8 0 0 1 16 0Z"
+                    stroke="currentColor"
+                    strokeWidth="1.6"
+                  />
+                  <circle cx="12" cy="10" r="2.4" stroke="currentColor" strokeWidth="1.6" />
+                </svg>
+                Barranquilla
+              </div>
+
               <div data-nav-item className="hidden md:block">
                 <Button variant="primary" size="sm" href="/contacto">
                   Agendar diagnóstico
@@ -167,8 +182,8 @@ export function Nav() {
               className="absolute inset-0 opacity-[0.025] pointer-events-none"
               style={{
                 backgroundImage:
-                  "linear-gradient(rgba(232,148,58,0.4) 1px, transparent 1px), " +
-                  "linear-gradient(90deg, rgba(232,148,58,0.4) 1px, transparent 1px)",
+                  "linear-gradient(rgba(180,189,210,0.4) 1px, transparent 1px), " +
+                  "linear-gradient(90deg, rgba(180,189,210,0.4) 1px, transparent 1px)",
                 backgroundSize: "72px 72px",
               }}
             />
@@ -179,7 +194,7 @@ export function Nav() {
               className="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2
                          w-[500px] h-[500px] rounded-full pointer-events-none"
               style={{
-                background: "radial-gradient(circle, rgba(232,148,58,0.06) 0%, transparent 70%)",
+                background: "radial-gradient(circle, rgba(180,189,210,0.06) 0%, transparent 70%)",
               }}
             />
 
@@ -237,7 +252,7 @@ export function Nav() {
               animate={{ scaleX: 1 }}
               exit={{ scaleX: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="relative h-px bg-[rgba(232,148,58,0.2)] origin-left"
+              className="relative h-px bg-[rgba(180,189,210,0.2)] origin-left"
             />
           </motion.div>
         )}

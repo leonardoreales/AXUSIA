@@ -32,7 +32,7 @@ export function Footer() {
         className="absolute top-0 left-1/2 -translate-x-1/2 h-px w-[480px] max-w-full"
         style={{
           background:
-            "linear-gradient(90deg, transparent, rgba(232,148,58,0.35), transparent)",
+            "linear-gradient(90deg, transparent, rgba(180,189,210,0.35), transparent)",
         }}
       />
 

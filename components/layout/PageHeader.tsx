@@ -30,7 +30,7 @@ export function PageHeader({
           width: 900,
           height: 380,
           background:
-            "radial-gradient(ellipse at 50% 0%, rgba(232,148,58,0.20) 0%, transparent 70%)",
+            "radial-gradient(ellipse at 50% 0%, rgba(180,189,210,0.20) 0%, transparent 70%)",
         }}
       />
 

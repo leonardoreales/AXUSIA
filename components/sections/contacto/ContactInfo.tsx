@@ -52,7 +52,7 @@ export function ContactInfo() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-60px" }}
         transition={{ duration: 0.6, ease: EASE }}
-        className="p-7 lg:p-8 rounded-[2px] border border-[rgba(232,148,58,0.2)] bg-[rgba(232,148,58,0.04)]"
+        className="p-7 lg:p-8 rounded-[2px] border border-[rgba(180,189,210,0.2)] bg-[rgba(180,189,210,0.04)]"
       >
         <h3 className="t-head text-[1rem] text-text mb-3">
           Lo que pasa después de que envías el formulario
@@ -69,9 +69,9 @@ export function ContactInfo() {
                 className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px]
                            font-[family-name:var(--font-syne)] font-bold"
                 style={{
-                  background: "rgba(232,148,58,0.1)",
+                  background: "rgba(180,189,210,0.1)",
                   color: "var(--color-accent)",
-                  border: "1px solid rgba(232,148,58,0.2)",
+                  border: "1px solid rgba(180,189,210,0.2)",
                 }}
               >
                 {i + 1}

@@ -15,7 +15,7 @@ const CATEGORY_COLORS: Record<string, {
   chipText: string;
 }> = {
   Motor:         { dot: "#4ECDC4", label: "#4ECDC4", chipBorder: "rgba(78,205,196,0.28)",  chipBg: "rgba(78,205,196,0.06)",  chipText: "#4ECDC4" },
-  IA:            { dot: "#E8943A", label: "#E8943A", chipBorder: "rgba(232,148,58,0.28)",  chipBg: "rgba(232,148,58,0.06)",  chipText: "#E8943A" },
+  IA:            { dot: "#B4BDD2", label: "#B4BDD2", chipBorder: "rgba(180,189,210,0.28)",  chipBg: "rgba(180,189,210,0.06)",  chipText: "#B4BDD2" },
   Comunicación:  { dot: "#60A5FA", label: "#93C5FD", chipBorder: "rgba(96,165,250,0.22)",  chipBg: "rgba(96,165,250,0.05)",  chipText: "#93C5FD" },
   Productividad: { dot: "#34D399", label: "#6EE7B7", chipBorder: "rgba(52,211,153,0.22)",  chipBg: "rgba(52,211,153,0.05)",  chipText: "#6EE7B7" },
   Datos:         { dot: "#A78BFA", label: "#C4B5FD", chipBorder: "rgba(167,139,250,0.22)", chipBg: "rgba(167,139,250,0.05)", chipText: "#C4B5FD" },

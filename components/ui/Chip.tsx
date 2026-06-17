@@ -13,7 +13,7 @@ const VARIANTS = {
   },
   live: {
     dot: "bg-accent animate-[blink_1.5s_ease-in-out_infinite]",
-    container: "bg-[rgba(232,148,58,0.07)] border-[rgba(232,148,58,0.2)] text-accent",
+    container: "bg-[rgba(180,189,210,0.07)] border-[rgba(180,189,210,0.2)] text-accent",
   },
   soon: {
     dot: "bg-muted",

@@ -90,7 +90,7 @@ function HexScene() {
     <>
       {/* Lights */}
       <ambientLight intensity={0.12} />
-      <pointLight position={[3, 2.5, 4]}   color="#E8943A" intensity={14} />
+      <pointLight position={[3, 2.5, 4]}   color="#B4BDD2" intensity={14} />
       <pointLight position={[-2.5, -2, 3]}  color="#4ECDC4" intensity={5}  />
       <pointLight position={[0, 2.5, 3]}    color="#ffffff"  intensity={3}  />
 
@@ -104,7 +104,7 @@ function HexScene() {
       {/* Ghost layer 2 — orange wireframe, mid depth */}
       <group ref={g2Ref} scale={0.80}>
         <lineSegments ref={ls2Ref} geometry={edgesGeo}>
-          <lineBasicMaterial color="#E8943A" transparent opacity={0} />
+          <lineBasicMaterial color="#B4BDD2" transparent opacity={0} />
         </lineSegments>
       </group>
 
@@ -116,21 +116,21 @@ function HexScene() {
             color="#060c18"
             metalness={0.88}
             roughness={0.09}
-            emissive="#E8943A"
+            emissive="#B4BDD2"
             emissiveIntensity={0.08}
           />
         </mesh>
 
         {/* Subtle edge highlight on hex */}
         <lineSegments geometry={edgesGeo}>
-          <lineBasicMaterial color="#E8943A" transparent opacity={0.25} />
+          <lineBasicMaterial color="#B4BDD2" transparent opacity={0.25} />
         </lineSegments>
 
         {/* A — left leg */}
         <mesh geometry={legLGeo}>
           <meshStandardMaterial
-            color="#E8943A"
-            emissive="#E8943A"
+            color="#B4BDD2"
+            emissive="#B4BDD2"
             emissiveIntensity={3.0}
           />
         </mesh>
@@ -138,8 +138,8 @@ function HexScene() {
         {/* A — right leg */}
         <mesh geometry={legRGeo}>
           <meshStandardMaterial
-            color="#E8943A"
-            emissive="#E8943A"
+            color="#B4BDD2"
+            emissive="#B4BDD2"
             emissiveIntensity={3.0}
           />
         </mesh>

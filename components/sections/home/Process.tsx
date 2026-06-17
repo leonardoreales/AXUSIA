@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function Process() {
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden">
+    <section className="relative py-32 lg:py-44 overflow-hidden">
       {/* Ambient glow */}
       <div
         aria-hidden
@@ -63,7 +63,7 @@ export function Process() {
                 className="font-[family-name:var(--font-syne)] font-black leading-none select-none
                            text-[5rem] lg:text-[7rem] mt-1 transition-all duration-300
                            group-hover:opacity-20"
-                style={{ color: "rgba(232,148,58,0.08)" }}
+                style={{ color: "rgba(180,189,210,0.08)" }}
                 aria-hidden
               >
                 {String(i + 1).padStart(2, "0")}

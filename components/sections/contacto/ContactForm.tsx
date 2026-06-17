@@ -53,8 +53,8 @@ const inputClass = `
   placeholder:text-muted
   transition-[border-color,box-shadow] duration-200
   outline-none
-  focus:border-[rgba(232,148,58,0.4)]
-  focus:shadow-[0_0_0_3px_rgba(232,148,58,0.07)]
+  focus:border-[rgba(180,189,210,0.4)]
+  focus:shadow-[0_0_0_3px_rgba(180,189,210,0.07)]
 `;
 
 export function ContactForm() {
@@ -103,8 +103,8 @@ export function ContactForm() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: EASE }}
         className="flex flex-col gap-8 py-12 px-8 rounded-[2px]
-                   border border-[rgba(232,148,58,0.2)]
-                   bg-[rgba(232,148,58,0.03)]"
+                   border border-[rgba(180,189,210,0.2)]
+                   bg-[rgba(180,189,210,0.03)]"
       >
         {/* Checkmark animado */}
         <div className="flex items-center gap-4">
@@ -113,7 +113,7 @@ export function ContactForm() {
             animate={{ scale: 1 }}
             transition={{ type: "spring", stiffness: 320, damping: 20, delay: 0.1 }}
             className="shrink-0 w-14 h-14 rounded-full flex items-center justify-center
-                       border border-[rgba(232,148,58,0.35)] bg-[rgba(232,148,58,0.08)]"
+                       border border-[rgba(180,189,210,0.35)] bg-[rgba(180,189,210,0.08)]"
           >
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden>
               <path d="M5 12l5 5 9-9" stroke="var(--color-accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -139,9 +139,9 @@ export function ContactForm() {
                   className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-[10px]
                              font-[family-name:var(--font-syne)] font-bold"
                   style={{
-                    background: "rgba(232,148,58,0.1)",
+                    background: "rgba(180,189,210,0.1)",
                     color: "var(--color-accent)",
-                    border: "1px solid rgba(232,148,58,0.2)",
+                    border: "1px solid rgba(180,189,210,0.2)",
                   }}
                 >
                   {i + 1}

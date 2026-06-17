@@ -69,8 +69,8 @@ export function CatalogCard({ item, isOpen, onToggle, index }: CatalogCardProps)
               shrink-0 w-9 h-9 rounded-[2px] flex items-center justify-center
               border transition-all duration-300
               ${isOpen
-                ? "border-[rgba(232,148,58,0.4)] bg-[rgba(232,148,58,0.08)] rotate-45"
-                : "border-[rgba(255,255,255,0.1)] bg-transparent group-hover:border-[rgba(232,148,58,0.3)]"
+                ? "border-[rgba(180,189,210,0.4)] bg-[rgba(180,189,210,0.08)] rotate-45"
+                : "border-[rgba(255,255,255,0.1)] bg-transparent group-hover:border-[rgba(180,189,210,0.3)]"
               }
             `}
           >
@@ -120,7 +120,7 @@ export function CatalogCard({ item, isOpen, onToggle, index }: CatalogCardProps)
                           width="14" height="14" viewBox="0 0 14 14"
                           fill="none" aria-hidden className="shrink-0 mt-0.5"
                         >
-                          <circle cx="7" cy="7" r="6" stroke="rgba(232,148,58,0.3)" />
+                          <circle cx="7" cy="7" r="6" stroke="rgba(180,189,210,0.3)" />
                           <path d="M4.5 7l2 2 3-3" stroke="var(--color-accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                         </svg>
                         {feat}

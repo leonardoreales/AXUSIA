@@ -27,7 +27,7 @@ export function FilterBar({ categories, active, onChange }: FilterBarProps) {
               transition-colors duration-200 cursor-pointer
               outline-none focus-visible:ring-1 focus-visible:ring-accent
               ${isActive
-                ? "text-text bg-[rgba(232,148,58,0.1)] border border-[rgba(232,148,58,0.3)]"
+                ? "text-text bg-[rgba(180,189,210,0.1)] border border-[rgba(180,189,210,0.3)]"
                 : "text-muted bg-transparent border border-border hover:text-text hover:border-border2"
               }
             `}
@@ -36,7 +36,7 @@ export function FilterBar({ categories, active, onChange }: FilterBarProps) {
             {isActive && (
               <motion.span
                 layoutId="filter-pill"
-                className="absolute inset-0 rounded-[4px] bg-[rgba(232,148,58,0.08)]"
+                className="absolute inset-0 rounded-[4px] bg-[rgba(180,189,210,0.08)]"
                 transition={{ type: "spring", stiffness: 350, damping: 30 }}
               />
             )}

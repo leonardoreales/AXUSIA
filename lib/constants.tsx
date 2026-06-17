@@ -495,18 +495,18 @@ export const SCROLL_SLIDES: ScrollSlide[] = [
   {
     id: 0,
     tag: "El problema",
-    tagColor: "#E8943A",
+    tagColor: "#B4BDD2",
     headline: "Tu equipo atascado en tareas que no escalan",
     body: "Cotizaciones manuales, seguimiento de pedidos, facturas a mano. Horas valiosas consumidas en trabajo repetitivo que nunca termina.",
     metric: "30h",
     metricSub: "semanales perdidas en tareas manuales",
-    bg: "rgba(232,148,58,0.05)",
-    border: "rgba(232,148,58,0.15)",
+    bg: "rgba(180,189,210,0.05)",
+    border: "rgba(180,189,210,0.15)",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <circle cx="12" cy="12" r="10" stroke="#E8943A" strokeWidth="1.5" />
-        <path d="M12 7v5l3 3" stroke="#E8943A" strokeWidth="1.5" strokeLinecap="round" />
-        <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="#E8943A" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
+        <circle cx="12" cy="12" r="10" stroke="#B4BDD2" strokeWidth="1.5" />
+        <path d="M12 7v5l3 3" stroke="#B4BDD2" strokeWidth="1.5" strokeLinecap="round" />
+        <path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="#B4BDD2" strokeWidth="1.5" strokeLinecap="round" opacity="0.4" />
       </svg>
     ),
   },
@@ -532,16 +532,16 @@ export const SCROLL_SLIDES: ScrollSlide[] = [
   {
     id: 2,
     tag: "La implementación",
-    tagColor: "#E8943A",
+    tagColor: "#B4BDD2",
     headline: "De diagnóstico a producción en 72 horas",
     body: "Llamada gratuita, análisis de tu proceso, diseño del flujo y puesta en marcha. Sin meses de espera ni contratos interminables.",
     metric: "72h",
     metricSub: "de diagnóstico gratis a sistema activo",
-    bg: "rgba(232,148,58,0.05)",
-    border: "rgba(232,148,58,0.15)",
+    bg: "rgba(180,189,210,0.05)",
+    border: "rgba(180,189,210,0.15)",
     icon: (
       <svg width="40" height="40" viewBox="0 0 24 24" fill="none" aria-hidden>
-        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#E8943A" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="#B4BDD2" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
       </svg>
     ),
   },

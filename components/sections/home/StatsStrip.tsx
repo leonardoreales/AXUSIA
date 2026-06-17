@@ -14,11 +14,11 @@ export function StatsStrip() {
         className="absolute top-0 left-0 right-0 h-px"
         style={{
           background:
-            "linear-gradient(90deg, transparent 0%, rgba(232,148,58,0.50) 30%, rgba(232,148,58,0.50) 70%, transparent 100%)",
+            "linear-gradient(90deg, transparent 0%, rgba(180,189,210,0.50) 30%, rgba(180,189,210,0.50) 70%, transparent 100%)",
         }}
       />
 
-      <div className="container py-10 lg:py-14">
+      <div className="container py-14 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_1px_1fr] gap-0 items-center">
 
           {/* Hero stat — 72h */}

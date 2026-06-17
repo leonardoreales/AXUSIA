@@ -39,7 +39,7 @@ export async function sendContactEmail(data: ContactFormData) {
 export async function sendConfirmationEmail(to: string, nombre: string) {
   const html = `
     <div style="font-family:sans-serif;max-width:560px;margin:0 auto;color:#1a1a1a">
-      <div style="background:#080B10;padding:32px;text-align:center;border-radius:4px 4px 0 0">
+      <div style="background:#0C1228;padding:32px;text-align:center;border-radius:4px 4px 0 0">
         <h1 style="color:#F0EEE8;font-size:28px;margin:0;letter-spacing:-1px">AXUSIA</h1>
         <p style="color:#7A8398;font-size:13px;margin:8px 0 0">Automatización con IA para tu negocio</p>
       </div>
@@ -49,7 +49,7 @@ export async function sendConfirmationEmail(to: string, nombre: string) {
           Recibimos tu solicitud de diagnóstico. En <strong>menos de 2 horas hábiles</strong> te contactamos
           por WhatsApp o email para coordinar una llamada de 30 minutos sin costo.
         </p>
-        <div style="background:#f8f8f8;border-left:3px solid #E8943A;padding:20px 24px;border-radius:0 4px 4px 0;margin-bottom:28px">
+        <div style="background:#f8f8f8;border-left:3px solid #162854;padding:20px 24px;border-radius:0 4px 4px 0;margin-bottom:28px">
           <p style="margin:0 0 12px;font-weight:600;font-size:14px;color:#111">Lo que pasa ahora:</p>
           <ol style="margin:0;padding-left:20px;color:#555;font-size:14px;line-height:1.8">
             <li>Revisamos la información de tu proceso</li>
@@ -61,7 +61,7 @@ export async function sendConfirmationEmail(to: string, nombre: string) {
         <p style="color:#888;font-size:13px;margin:0 0 24px">
           ¿Tienes algo urgente? Escríbenos directamente por WhatsApp:
           <br/>
-          <a href="${WA_BASE}" style="color:#E8943A;text-decoration:none;font-weight:600">Abrir WhatsApp</a>
+          <a href="${WA_BASE}" style="color:#162854;text-decoration:none;font-weight:600">Abrir WhatsApp</a>
         </p>
         <hr style="border:none;border-top:1px solid #eee;margin:0 0 24px"/>
         <p style="color:#aaa;font-size:12px;margin:0;text-align:center">

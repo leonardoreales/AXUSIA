@@ -31,9 +31,9 @@ const SIZES: Record<Size, string> = {
 
 const VARIANTS: Record<Variant, string> = {
   primary:
-    "bg-accent text-bg border border-accent hover:bg-[#d4832e] hover:border-[#d4832e] shadow-[0_2px_14px_rgba(232,148,58,0.20)] hover:shadow-[0_4px_24px_rgba(232,148,58,0.30)]",
+    "bg-[linear-gradient(105deg,#6A7A98_0%,#A8B4C8_28%,#D8DCE6_52%,#FFFEF8_62%,#C8CED8_78%,#6A7A98_100%)] text-bg border border-[rgba(180,189,210,0.25)] shadow-[0_2px_16px_rgba(180,189,210,0.18)] hover:brightness-[1.07] hover:shadow-[0_4px_28px_rgba(180,189,210,0.32)]",
   secondary:
-    "bg-transparent text-text border border-[rgba(255,255,255,0.18)] hover:border-accent hover:text-accent hover:shadow-[0_0_20px_rgba(232,148,58,0.12)]",
+    "bg-transparent text-text border border-[rgba(255,255,255,0.18)] hover:border-accent hover:text-accent hover:shadow-[0_0_20px_rgba(180,189,210,0.12)]",
   ghost:
     "bg-transparent text-muted hover:text-text border border-transparent",
 };

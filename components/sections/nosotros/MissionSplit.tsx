@@ -71,7 +71,7 @@ export function MissionSplit() {
               viewport={{ once: true, margin: "-40px" }}
               transition={{ duration: 0.6, delay: 0.32, ease: EASE }}
             >
-              "Tu negocio no necesita un equipo de ingenieros. Necesita los procesos correctos automatizados."
+              &ldquo;Tu negocio no necesita un equipo de ingenieros. Necesita los procesos correctos automatizados.&rdquo;
             </motion.blockquote>
           </div>
         </div>

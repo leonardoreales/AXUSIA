@@ -8,7 +8,7 @@ const EASE = [0.16, 1, 0.3, 1] as const;
 
 export function Industries() {
   return (
-    <section className="relative py-20 lg:py-28 bg-surface">
+    <section className="relative py-28 lg:py-40 bg-surface">
       <div
         aria-hidden
         className="absolute inset-x-0 top-0 h-px"
@@ -20,7 +20,7 @@ export function Industries() {
 
       <div className="container">
         {/* Header */}
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-end mb-12 lg:mb-0">
+        <div className="grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-6 items-end mb-14 lg:mb-0">
           <div className="flex flex-col gap-5">
             <Eyebrow>Sectores</Eyebrow>
             <motion.h2
@@ -53,7 +53,7 @@ export function Industries() {
           >
             <span
               className="font-[family-name:var(--font-syne)] font-black text-[3.5rem] leading-none"
-              style={{ color: "rgba(232,148,58,0.15)" }}
+              style={{ color: "rgba(180,189,210,0.15)" }}
             >
               {INDUSTRIES.length}
             </span>
@@ -62,7 +62,7 @@ export function Industries() {
         </div>
 
         {/* Typographic table */}
-        <div className="divide-y divide-border/50 mt-0 lg:mt-10">
+        <div className="divide-y divide-border/50 mt-0 lg:mt-16">
           {INDUSTRIES.map((ind, i) => (
             <motion.div
               key={ind.name}

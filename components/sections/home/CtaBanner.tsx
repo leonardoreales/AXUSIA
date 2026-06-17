@@ -12,14 +12,14 @@ interface CtaBannerProps {
 
 export function CtaBanner({ hideEyebrow = false }: CtaBannerProps) {
   return (
-    <section className="relative py-24 lg:py-36 overflow-hidden bg-surface">
+    <section className="relative py-32 lg:py-44 overflow-hidden bg-surface">
       {/* Radial glow — left-aligned to back the copy */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 28% 50%, rgba(232,148,58,0.18) 0%, rgba(232,148,58,0.06) 38%, transparent 65%)",
+            "radial-gradient(ellipse at 28% 50%, rgba(180,189,210,0.18) 0%, rgba(180,189,210,0.06) 38%, transparent 65%)",
         }}
       />
 
@@ -29,7 +29,7 @@ export function CtaBanner({ hideEyebrow = false }: CtaBannerProps) {
         className="absolute top-0 left-0 right-0 h-px"
         style={{
           background:
-            "linear-gradient(90deg, transparent, rgba(232,148,58,0.55), transparent)",
+            "linear-gradient(90deg, transparent, rgba(180,189,210,0.55), transparent)",
         }}
       />
 

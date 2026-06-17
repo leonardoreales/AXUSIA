@@ -10,14 +10,14 @@ export function Testimonials() {
   const [featured, ...rest] = TESTIMONIALS;
 
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden bg-surface">
+    <section className="relative py-28 lg:py-40 overflow-hidden bg-surface">
       {/* Subtle glow */}
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 60%, rgba(232,148,58,0.06) 0%, transparent 55%)",
+            "radial-gradient(ellipse at 20% 60%, rgba(180,189,210,0.06) 0%, transparent 55%)",
         }}
       />
 
@@ -33,7 +33,7 @@ export function Testimonials() {
 
       <div className="container relative">
         {/* Header */}
-        <div className="flex flex-col gap-4 mb-12 lg:mb-16 max-w-[480px]">
+        <div className="flex flex-col gap-4 mb-14 lg:mb-20 max-w-[520px]">
           <Eyebrow>Clientes</Eyebrow>
           <motion.h2
             className="t-head text-[clamp(1.75rem,4vw,2.75rem)]"
@@ -56,7 +56,8 @@ export function Testimonials() {
             viewport={{ once: true, margin: "-40px" }}
             transition={{ duration: 0.65, ease: EASE }}
             className="flex flex-col justify-between gap-8 p-8 lg:p-10 rounded-[2px]
-                       border-l-2 border-accent/50
+                       border-t-2 border-accent/50
+                       border-x border-b border-border
                        bg-surface2"
           >
             {/* Quote */}
@@ -64,10 +65,10 @@ export function Testimonials() {
               {/* Opening quote mark */}
               <div
                 className="font-[family-name:var(--font-syne)] font-black leading-none select-none"
-                style={{ fontSize: "clamp(3rem,6vw,5rem)", color: "rgba(232,148,58,0.12)" }}
+                style={{ fontSize: "clamp(3rem,6vw,5rem)", color: "rgba(180,189,210,0.12)" }}
                 aria-hidden
               >
-                "
+                &ldquo;
               </div>
               <p className="t-head text-[clamp(1rem,1.8vw,1.2rem)] text-text leading-relaxed -mt-4">
                 {featured.quote}
@@ -91,8 +92,8 @@ export function Testimonials() {
                 <div
                   className="px-3 py-1.5 rounded-[2px] shrink-0"
                   style={{
-                    background: "rgba(232,148,58,0.08)",
-                    border: "1px solid rgba(232,148,58,0.2)",
+                    background: "rgba(180,189,210,0.08)",
+                    border: "1px solid rgba(180,189,210,0.2)",
                   }}
                 >
                   <p className="text-[12px] font-[family-name:var(--font-syne)] font-semibold text-accent">
@@ -116,7 +117,7 @@ export function Testimonials() {
                            bg-surface2 flex-1"
               >
                 <p className="text-[13px] text-text/80 font-[family-name:var(--font-dm)] leading-relaxed">
-                  "{t.quote}"
+                  &ldquo;{t.quote}&rdquo;
                 </p>
 
                 <div className="flex items-center justify-between gap-3 mt-auto flex-wrap border-t border-[rgba(255,255,255,0.05)] pt-4">

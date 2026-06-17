@@ -15,34 +15,44 @@ const DEMOS = [WaDemo, ContaDemo, LeadsDemo];
 
 export function ServicesTeaser() {
   return (
-    <section className="relative py-20 lg:py-28 overflow-hidden">
+    <section className="relative py-32 lg:py-44 overflow-hidden">
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 80%, rgba(232,148,58,0.09) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 50% 80%, rgba(180,189,210,0.09) 0%, transparent 60%)",
         }}
       />
 
       <div className="container relative">
         {/* Header */}
-        <div className="flex flex-col gap-5 mb-4 max-w-[560px]">
-          <Eyebrow>Qué automatizamos</Eyebrow>
+        <div className="flex flex-col gap-5 mb-0 max-w-[680px]">
+          <Eyebrow>Cómo lo hacemos</Eyebrow>
           <motion.h2
-            className="t-head text-[clamp(1.75rem,4vw,2.75rem)]"
+            className="t-head text-[clamp(2.25rem,5vw,3.5rem)]"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-60px" }}
             transition={{ duration: 0.65, delay: 0.08, ease: EASE }}
           >
-            Las tareas que más tiempo te roban,{" "}
-            resueltas con IA
+            Soluciones que se ven, se usan y generan resultados.
           </motion.h2>
+          <motion.p
+            className="max-w-[520px] text-[1rem] leading-relaxed text-text/70 font-[family-name:var(--font-dm)]"
+            initial={{ opacity: 0, y: 14 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-60px" }}
+            transition={{ duration: 0.58, delay: 0.16, ease: EASE }}
+          >
+            Cada automatización se diseña como una operación completa: entrada
+            del cliente, decisión con IA, registro y seguimiento sin tareas
+            manuales escondidas.
+          </motion.p>
         </div>
 
         {/* Zig-zag rows */}
-        <div className="divide-y divide-border mt-10 lg:mt-14">
+        <div className="divide-y divide-border mt-16 lg:mt-20">
           {SERVICES_TEASER.map((svc, i) => {
             const isEven = i % 2 === 0;
             const DemoComponent = DEMOS[i];
@@ -63,7 +73,7 @@ export function ServicesTeaser() {
                   {/* Ghost index */}
                   <span
                     className="font-[family-name:var(--font-syne)] font-black text-[clamp(4.5rem,9vw,7rem)] leading-none select-none -mb-8"
-                    style={{ color: "rgba(232,148,58,0.08)" }}
+                    style={{ color: "rgba(180,189,210,0.08)" }}
                   >
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -119,7 +129,7 @@ export function ServicesTeaser() {
                     className="absolute inset-0 pointer-events-none"
                     style={{
                       background: i % 2 === 0
-                        ? "radial-gradient(circle at 50% 60%, rgba(232,148,58,0.18) 0%, transparent 65%)"
+                        ? "radial-gradient(circle at 50% 60%, rgba(180,189,210,0.18) 0%, transparent 65%)"
                         : "radial-gradient(circle at 50% 60%, rgba(78,205,196,0.14) 0%, transparent 65%)",
                     }}
                     aria-hidden

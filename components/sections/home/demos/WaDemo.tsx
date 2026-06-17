@@ -12,7 +12,7 @@ export function WaDemo() {
       >
         <div
           className="w-8 h-8 rounded-full flex items-center justify-center shrink-0 text-[12px]"
-          style={{ background: "rgba(232,148,58,0.15)", color: "#E8943A", fontFamily: "sans-serif", fontWeight: 700 }}
+          style={{ background: "rgba(180,189,210,0.15)", color: "#B4BDD2", fontFamily: "sans-serif", fontWeight: 700 }}
         >
           A
         </div>
@@ -31,7 +31,7 @@ export function WaDemo() {
         <div className="flex justify-end">
           <div
             className="px-3 py-2 rounded-[8px] rounded-br-[2px] max-w-[180px]"
-            style={{ background: "rgba(232,148,58,0.18)", fontSize: "12px", color: "#F0EEE8", fontFamily: "sans-serif", lineHeight: 1.4 }}
+            style={{ background: "rgba(180,189,210,0.18)", fontSize: "12px", color: "#F0EEE8", fontFamily: "sans-serif", lineHeight: 1.4 }}
           >
             ¿Tienen disponibilidad para mañana?
           </div>
@@ -51,7 +51,7 @@ export function WaDemo() {
         <div className="flex justify-end">
           <div
             className="px-3 py-2 rounded-[8px] rounded-br-[2px]"
-            style={{ background: "rgba(232,148,58,0.18)", fontSize: "12px", color: "#F0EEE8", fontFamily: "sans-serif", lineHeight: 1.4 }}
+            style={{ background: "rgba(180,189,210,0.18)", fontSize: "12px", color: "#F0EEE8", fontFamily: "sans-serif", lineHeight: 1.4 }}
           >
             A las 10am
           </div>

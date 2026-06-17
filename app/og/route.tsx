@@ -38,7 +38,7 @@ export async function GET() {
             width: "480px",
             height: "480px",
             borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(232,148,58,0.22) 0%, transparent 65%)",
+            background: "radial-gradient(circle, rgba(180,189,210,0.22) 0%, transparent 65%)",
           }}
         />
         {/* Teal glow bottom-left */}
@@ -62,14 +62,14 @@ export async function GET() {
               display: "flex",
               alignItems: "center",
               gap: "12px",
-              color: "#E8943A",
+              color: "#B4BDD2",
               fontSize: "13px",
               fontWeight: 600,
               letterSpacing: "2px",
               textTransform: "uppercase",
             }}
           >
-            <div style={{ width: "40px", height: "1px", background: "#E8943A" }} />
+            <div style={{ width: "40px", height: "1px", background: "#B4BDD2" }} />
             Automatización IA · Colombia
           </div>
 

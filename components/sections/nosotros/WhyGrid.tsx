@@ -56,7 +56,7 @@ export function WhyGrid() {
                 <div className="flex flex-col items-center gap-1 pt-0.5">
                   <span
                     className="t-label"
-                    style={{ color: "rgba(232,148,58,0.55)" }}
+                    style={{ color: "rgba(180,189,210,0.55)" }}
                   >
                     {item.number}
                   </span>

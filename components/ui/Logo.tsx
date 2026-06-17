@@ -114,7 +114,7 @@ export function Logo({
     >
       <defs>
         <linearGradient id={`${uid}-fill`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stopColor="#E8943A" stopOpacity="0.18" />
+          <stop offset="0%" stopColor="#B4BDD2" stopOpacity="0.22" />
           <stop offset="100%" stopColor="#4ECDC4" stopOpacity="0.08" />
         </linearGradient>
         <filter id={`${uid}-glow`} x="-30%" y="-30%" width="160%" height="160%">
@@ -135,9 +135,9 @@ export function Logo({
 
       {/* Layer 2 — mid depth (orange) */}
       <g ref={layer2Ref} opacity={0}>
-        <path d={HEX} stroke="#E8943A" strokeWidth="1.2" fill="rgba(232,148,58,0.05)" />
-        <path d={LEG_L} stroke="#E8943A" strokeWidth="1.4" strokeLinecap="round" opacity={0.6} fill="none" />
-        <path d={LEG_R} stroke="#E8943A" strokeWidth="1.4" strokeLinecap="round" opacity={0.6} fill="none" />
+        <path d={HEX} stroke="#B4BDD2" strokeWidth="1.2" fill="rgba(180,189,210,0.05)" />
+        <path d={LEG_L} stroke="#B4BDD2" strokeWidth="1.4" strokeLinecap="round" opacity={0.6} fill="none" />
+        <path d={LEG_R} stroke="#B4BDD2" strokeWidth="1.4" strokeLinecap="round" opacity={0.6} fill="none" />
       </g>
 
       {/* Layer 1 — main mark */}
@@ -150,7 +150,7 @@ export function Logo({
       <path
         ref={hexRef}
         d={HEX}
-        stroke="#E8943A"
+        stroke="#B4BDD2"
         strokeWidth="1.5"
         strokeLinejoin="round"
         fill="none"
@@ -159,7 +159,7 @@ export function Logo({
       <path
         ref={legLRef}
         d={LEG_L}
-        stroke="#E8943A"
+        stroke="#B4BDD2"
         strokeWidth="2.2"
         strokeLinecap="round"
         fill="none"
@@ -167,7 +167,7 @@ export function Logo({
       <path
         ref={legRRef}
         d={LEG_R}
-        stroke="#E8943A"
+        stroke="#B4BDD2"
         strokeWidth="2.2"
         strokeLinecap="round"
         fill="none"
@@ -180,7 +180,7 @@ export function Logo({
       className={`font-[family-name:var(--font-syne)] leading-none tracking-[-0.3px] ${text}`}
       style={{ fontWeight: 800 }}
     >
-      AXUS<span style={{ color: "#E8943A" }}>IA</span>
+      AXUS<span style={{ color: "#B4BDD2" }}>IA</span>
     </span>
   );
 

@@ -2,16 +2,16 @@
 
 /* ─── DESIGN TOKENS ──────────────────────────────────────────────── */
 @theme inline {
-  /* Background / Surface */
-  --color-bg:       #080B10;
-  --color-surface:  #0F1420;
-  --color-surface2: #161C2E;
-  --color-surface3: #1E2640;
+  /* Background / Surface — Midnight Navy palette */
+  --color-bg:       #0C1228;
+  --color-surface:  #162854;
+  --color-surface2: #1E3268;
+  --color-surface3: #263C7A;
 
-  /* Accent */
-  --color-accent:      #E8943A;
-  --color-accent-dim:  rgba(232,148,58,0.15);
-  --color-accent-glow: rgba(232,148,58,0.08);
+  /* Accent — Platinum / Pearl */
+  --color-accent:      #B4BDD2;
+  --color-accent-dim:  rgba(180,189,210,0.15);
+  --color-accent-glow: rgba(180,189,210,0.08);
   --color-teal:        #4ECDC4;
   --color-teal-dim:    rgba(78,205,196,0.12);
 
@@ -101,17 +101,17 @@ body::after {
 .container {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 5vw, 96px);
+  padding: 0 clamp(20px, 4vw, 64px);
 }
 .container-wide {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 5vw, 96px);
+  padding: 0 clamp(20px, 4vw, 64px);
 }
 .container-sm {
   max-width: 880px;
   margin: 0 auto;
-  padding: 0 clamp(24px, 5vw, 96px);
+  padding: 0 clamp(20px, 4vw, 64px);
 }
 
 /* ─── EYEBROW ────────────────────────────────────────────────────── */
@@ -138,6 +138,45 @@ body::after {
 @keyframes float    { 0%,100%{transform:translateY(0) rotate(0deg)} 50%{transform:translateY(-14px) rotate(1deg)} }
 @keyframes blink    { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.7)} }
 @keyframes slideDown{ from{opacity:0;transform:translateY(-12px)} to{opacity:1;transform:translateY(0)} }
+
+/* ─── PARTICLE HERO ──────────────────────────────────────────────── */
+@property --axusia-p {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: 0%;
+}
+@keyframes axusia-pulse {
+  0%   { --axusia-p: 0%; }
+  50%  { --axusia-p: 300%; }
+  100% { --axusia-p: 300%; }
+}
+@keyframes axusia-load {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes axusia-up {
+  100% { transform: translateY(0); }
+}
+@keyframes axusia-spotlight {
+  0%   { transform: rotateZ(0deg)    scale(1);   filter: blur(22px) opacity(.28); }
+  20%  { transform: rotateZ(-1.5deg) scale(1.2); filter: blur(24px) opacity(.38); }
+  40%  { transform: rotateZ(2deg)    scale(1.3); filter: blur(20px) opacity(.22); }
+  60%  { transform: rotateZ(-2deg)   scale(1.2); filter: blur(22px) opacity(.34); }
+  80%  { transform: rotateZ(1deg)    scale(1.1); filter: blur(19px) opacity(.22); }
+  100% { transform: rotateZ(0deg)    scale(1);   filter: blur(22px) opacity(.28); }
+}
+@keyframes axusia-loadrot {
+  0%   { transform: rotate(0deg) scale(0); }
+  100% { transform: scale(1); }
+}
+@keyframes axusia-accent {
+  0%   { opacity: 0; transform: scale(0); }
+  100% { opacity: 1; transform: scale(1); }
+}
+@keyframes axusia-metal {
+  0%   { background-position: 150% center; }
+  100% { background-position: -150% center; }
+}
 
 /* ─── REDUCED MOTION ─────────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {

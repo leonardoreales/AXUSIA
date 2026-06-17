@@ -14,7 +14,7 @@ export default function NotFound() {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 40%, rgba(232,148,58,0.08) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 50% 40%, rgba(180,189,210,0.08) 0%, transparent 60%)",
         }}
       />
 

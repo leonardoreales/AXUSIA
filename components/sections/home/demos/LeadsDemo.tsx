@@ -2,7 +2,7 @@ const COLUMNS = [
   {
     label: "Nuevo",
     count: 3,
-    color: "#E8943A",
+    color: "#B4BDD2",
     leads: [
       { name: "C. Martínez", source: "Instagram" },
       { name: "R. Pérez",    source: "Web"       },
@@ -100,7 +100,7 @@ export function LeadsDemo() {
         className="px-4 py-2.5 flex items-center gap-1.5"
         style={{ borderTop: "1px solid rgba(255,255,255,0.05)" }}
       >
-        <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#E8943A" }} />
+        <div className="w-1.5 h-1.5 rounded-full" style={{ background: "#B4BDD2" }} />
         <span style={{ fontSize: "10px", color: "#7A8398", fontFamily: "sans-serif" }}>
           12 leads capturados este mes
         </span>
