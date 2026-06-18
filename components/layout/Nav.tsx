@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import gsap from "gsap";
+
 import { Logo } from "@/components/ui/Logo";
 import { Button } from "@/components/ui/Button";
 import { NAV_LINKS } from "@/lib/constants";
@@ -32,18 +32,26 @@ export function Nav() {
   /* ─── GSAP cinematic entrance ─────────────────────────── */
   useEffect(() => {
     if (!navRef.current) return;
-    const ctx = gsap.context(() => {
-      gsap.from("[data-nav-item]", {
-        y: -18,
-        opacity: 0,
-        stagger: 0.065,
-        duration: 0.75,
-        ease: "power3.out",
-        delay: 0.2,
-        clearProps: "all",
-      });
-    }, navRef);
-    return () => ctx.revert();
+    let mounted = true;
+    let cleanup: (() => void) | undefined;
+
+    import("gsap").then(({ default: gsap }) => {
+      if (!mounted) return;
+      const ctx = gsap.context(() => {
+        gsap.from("[data-nav-item]", {
+          y: -18,
+          opacity: 0,
+          stagger: 0.065,
+          duration: 0.75,
+          ease: "power3.out",
+          delay: 0.2,
+          clearProps: "all",
+        });
+      }, navRef);
+      cleanup = () => ctx.revert();
+    });
+
+    return () => { mounted = false; cleanup?.(); };
   }, []);
 
   /* ─── Body lock ───────────────────────────────────────── */
@@ -86,10 +94,11 @@ export function Nav() {
                     href={link.href}
                     data-nav-item
                     className={`
-                      relative py-1 text-sm
+                      relative py-1 text-sm rounded-[2px]
                       font-[family-name:var(--font-syne)] font-medium
-                      transition-colors duration-200 outline-none
-                      focus-visible:text-accent
+                      transition-colors duration-200
+                      focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-accent/70
+                      focus-visible:ring-offset-2 focus-visible:ring-offset-bg focus-visible:text-accent
                       ${active ? "text-accent" : "text-muted hover:text-text"}
                     `}
                   >

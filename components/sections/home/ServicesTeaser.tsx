@@ -108,9 +108,8 @@ export function ServicesTeaser() {
                 {/* Visual column — product demo */}
                 <div
                   className={`relative flex items-center justify-center
-                    overflow-hidden min-h-[320px] lg:min-h-0 p-10
+                    overflow-hidden min-h-[320px] lg:min-h-0 p-10 bg-bg
                     ${isEven ? "order-1 lg:order-2" : "order-1 lg:order-1"}`}
-                  style={{ background: "#0a1628" }}
                 >
                   {/* Subtle grid overlay */}
                   <div

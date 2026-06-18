@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import { motion, useMotionValue, useReducedMotion, useSpring, useTransform } from "framer-motion"
 
 interface Particle {
   x: number
@@ -38,7 +39,7 @@ function makeParticle(canvas: HTMLCanvasElement): Particle {
     },
     draw(ctx: CanvasRenderingContext2D) {
       if (Math.random() > 0.3) {
-        ctx.fillStyle = `rgba(232, ${118 + Math.floor(Math.random() * 44)}, 58, ${this.opacity * 0.5})`
+        ctx.fillStyle = `rgba(180, ${189 + Math.floor(Math.random() * 21)}, 210, ${this.opacity * 0.45})`
       } else {
         ctx.fillStyle = `rgba(78, 205, ${188 + Math.floor(Math.random() * 30)}, ${this.opacity * 0.35})`
       }
@@ -114,32 +115,42 @@ const ACCENT_TOPS = [8, 14, 21, 29, 36]
 const EXTRUSION_COUNT = 6
 
 /* AXUS — platinum/pearl: diagonal metallic sweep, static (no backgroundSize — keeps background-clip:text reliable) */
-const AXUS_EXTRUDE  = "#1A1A1A"
+const AXUS_EXTRUDE  = "#343438"
 const AXUS_ECHO     = "rgba(230,230,230,0.08)"
 const AXUS_GRADIENT = "linear-gradient(105deg, #5A5A5A 0%, #B8B8B8 20%, #EFEFEF 38%, #FAFAF8 50%, #EFEFEF 62%, #B8B8B8 80%, #5A5A5A 100%)"
 
-/* IA — gold metallic: dark bronze → amber → gold → warm white peak → back */
-const IA_EXTRUDE  = "#8B5A1A"
-const IA_ECHO     = "rgba(244,192,122,0.22)"
-const IA_SHADOW   = "0 0 18px rgba(244,192,122,0.14)"
-const IA_GRADIENT = `linear-gradient(
-  105deg,
-  #6B3D0E 0%,
-  #C4681A 18%,
-  #B4BDD2 33%,
-  #F4C07A 43%,
-  #FFF8EC 50%,
-  #F4C07A 57%,
-  #B4BDD2 67%,
-  #C4681A 82%,
-  #6B3D0E 100%
-)`
+/* IA — grafito premium: charcoal profundo que sube a slate medio — más oscuro y cargado que AXUS */
+const IA_EXTRUDE  = "#1E2535"
+const IA_ECHO     = "rgba(80,86,98,0.18)"
+const IA_SHADOW   = "0 0 16px rgba(80,86,98,0.22)"
+const IA_GRADIENT = "linear-gradient(135deg, #1A1E24 0%, #252B33 20%, #3A4050 40%, #626874 60%, #848A96 75%, #5A6070 88%, #2E333C 100%)"
 
 export function AxusiaParticleHero() {
+  const rm = useReducedMotion()
+  const sectionRef = useRef<HTMLElement>(null)
+  const mouseX = useMotionValue(0)
+  const mouseY = useMotionValue(0)
+  const springX = useSpring(mouseX, { stiffness: 60, damping: 28 })
+  const springY = useSpring(mouseY, { stiffness: 60, damping: 28 })
+  // Face moves 25% as much as shadow → pop-out illusion
+  const faceX = useTransform(springX, v => rm ? 0 : v * 0.25)
+  const faceY = useTransform(springY, v => rm ? 0 : v * 0.25)
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (rm) return
+    const rect = sectionRef.current?.getBoundingClientRect()
+    if (!rect) return
+    mouseX.set((e.clientX - rect.left - rect.width / 2) / rect.width * 10)
+    mouseY.set((e.clientY - rect.top - rect.height / 2) / rect.height * 6)
+  }
+
   return (
     <section
+      ref={sectionRef}
       className="relative min-h-[100dvh] overflow-hidden"
       style={{ background: "var(--color-bg)" }}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={() => { if (!rm) { mouseX.set(0); mouseY.set(0) } }}
     >
       {/* Spotlight beams */}
       <div
@@ -162,7 +173,7 @@ export function AxusiaParticleHero() {
               backgroundImage:
                 "conic-gradient(from 0deg at 50% -5%, transparent 45%, rgba(180,189,210,.14) 49%, rgba(180,189,210,.24) 50%, rgba(180,189,210,.14) 51%, transparent 55%)",
               transformOrigin: "50% 0",
-              filter: "blur(22px) opacity(0.16)",
+              filter: "blur(22px)",
               transform: rot,
               animation: `axusia-loadrot 2s ease-in-out ${delay} both, axusia-spotlight ${dur} ease-in-out ${delay} infinite${reverse ? " reverse" : ""}`,
             }}
@@ -213,55 +224,60 @@ export function AxusiaParticleHero() {
         >
           <div style={{ display: "inline-block" }}>
             <div style={{ position: "relative", display: "inline-block" }}>
-              {/* 3D extrusion layers */}
-              {Array.from({ length: EXTRUSION_COUNT }, (_, i) => (
+
+              {/* 3D extrusion block — sigue al cursor completo (sombra) */}
+              <motion.div
+                aria-hidden
+                style={{ x: springX, y: springY, position: "absolute", inset: 0, pointerEvents: "none" }}
+              >
+                {Array.from({ length: EXTRUSION_COUNT }, (_, i) => (
+                  <p
+                    key={i}
+                    style={{
+                      position: "absolute",
+                      top: `${(i + 1) * 1.0}px`,
+                      left: `${(i + 1) * 0.7}px`,
+                      fontFamily: "var(--font-display)",
+                      fontSize: "clamp(3.5rem, 13vw, 11rem)",
+                      fontWeight: 800,
+                      letterSpacing: "-0.04em",
+                      lineHeight: 1,
+                      whiteSpace: "nowrap",
+                      opacity: Math.max(0, 0.28 - i * 0.038),
+                      userSelect: "none",
+                      pointerEvents: "none",
+                    }}
+                  >
+                    <span style={{ color: AXUS_EXTRUDE }}>AXUS </span>
+                    <span style={{ color: IA_EXTRUDE }}>IA</span>
+                  </p>
+                ))}
+                {/* Blur echo */}
                 <p
-                  key={i}
-                  aria-hidden
                   style={{
                     position: "absolute",
-                    top: `${(i + 1) * 1.6}px`,
-                    left: `${(i + 1) * 1.2}px`,
+                    inset: 0,
                     fontFamily: "var(--font-display)",
                     fontSize: "clamp(3.5rem, 13vw, 11rem)",
                     fontWeight: 800,
                     letterSpacing: "-0.04em",
                     lineHeight: 1,
                     whiteSpace: "nowrap",
-                    opacity: Math.max(0, 0.22 - i * 0.032),
+                    filter: "blur(18px) opacity(0.06)",
                     userSelect: "none",
                     pointerEvents: "none",
                   }}
                 >
-                  <span style={{ color: AXUS_EXTRUDE }}>AXUS </span>
-                  <span style={{ color: IA_EXTRUDE }}>IA</span>
+                  <span style={{ color: AXUS_ECHO }}>AXUS </span>
+                  <span style={{ color: IA_ECHO }}>IA</span>
                 </p>
-              ))}
+              </motion.div>
 
-              {/* Blur echo */}
-              <p
-                aria-hidden
+              {/* Cara — se mueve 25% menos → ilusión de pop-out 3D */}
+              <motion.p
                 style={{
-                  position: "absolute",
-                  inset: 0,
-                  fontFamily: "var(--font-display)",
-                  fontSize: "clamp(3.5rem, 13vw, 11rem)",
-                  fontWeight: 800,
-                  letterSpacing: "-0.04em",
-                  lineHeight: 1,
-                  whiteSpace: "nowrap",
-                  filter: "blur(22px) opacity(0.1)",
-                  userSelect: "none",
-                  pointerEvents: "none",
-                }}
-              >
-                <span style={{ color: AXUS_ECHO }}>AXUS </span>
-                <span style={{ color: IA_ECHO }}>IA</span>
-              </p>
-
-              {/* Main animated text */}
-              <p
-                style={{
+                  x: faceX,
+                  y: faceY,
                   fontFamily: "var(--font-display)",
                   fontSize: "clamp(3.5rem, 13vw, 11rem)",
                   fontWeight: 800,
@@ -269,17 +285,16 @@ export function AxusiaParticleHero() {
                   lineHeight: 1,
                   whiteSpace: "nowrap",
                   position: "relative",
+                  zIndex: 10,
                 }}
               >
                 <span
                   style={{
                     backgroundImage: AXUS_GRADIENT,
-                    backgroundSize: "300% auto",
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     textShadow: "0 0 20px rgba(255,255,255,0.06)",
-                    animation: "axusia-metal 3.8s linear 1.2s infinite",
                     display: "inline",
                   } as React.CSSProperties}
                 >
@@ -288,18 +303,16 @@ export function AxusiaParticleHero() {
                 <span
                   style={{
                     backgroundImage: IA_GRADIENT,
-                    backgroundSize: "300% auto",
                     backgroundClip: "text",
                     WebkitBackgroundClip: "text",
                     WebkitTextFillColor: "transparent",
                     textShadow: IA_SHADOW,
-                    animation: "axusia-metal 3.5s linear 1.5s infinite",
                     display: "inline",
                   } as React.CSSProperties}
                 >
                   IA
                 </span>
-              </p>
+              </motion.p>
             </div>
           </div>
 

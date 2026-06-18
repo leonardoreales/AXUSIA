@@ -33,7 +33,7 @@ const VARIANTS: Record<Variant, string> = {
   primary:
     "bg-[linear-gradient(105deg,#6A7A98_0%,#A8B4C8_28%,#D8DCE6_52%,#FFFEF8_62%,#C8CED8_78%,#6A7A98_100%)] text-bg border border-[rgba(180,189,210,0.25)] shadow-[0_2px_16px_rgba(180,189,210,0.18)] hover:brightness-[1.07] hover:shadow-[0_4px_28px_rgba(180,189,210,0.32)]",
   secondary:
-    "bg-transparent text-text border border-[rgba(255,255,255,0.18)] hover:border-accent hover:text-accent hover:shadow-[0_0_20px_rgba(180,189,210,0.12)]",
+    "bg-transparent text-text border border-[rgba(255,255,255,0.18)] hover:border-accent hover:text-accent hover:shadow-[0_2px_12px_rgba(180,189,210,0.12)]",
   ghost:
     "bg-transparent text-muted hover:text-text border border-transparent",
 };
@@ -102,7 +102,7 @@ export function Button({
     <span
       aria-hidden
       className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/15 to-transparent
-                 transition-transform duration-700 ease-in-out group-hover:translate-x-full pointer-events-none"
+                 transition-transform duration-400 ease-in-out group-hover:translate-x-full pointer-events-none"
     />
   );
 

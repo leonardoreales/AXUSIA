@@ -4,6 +4,7 @@ import "./globals.css";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
 import { Analytics } from "@vercel/analytics/next";
+import { LayoutAnimate } from "./_layout-animate";
 
 const syne = Syne({
   subsets: ["latin"],
@@ -67,7 +68,7 @@ export default function RootLayout({
     <html lang="es" className={`${syne.variable} ${dmSans.variable} h-full`}>
       <body className="min-h-full antialiased">
           <Nav />
-          <main>{children}</main>
+          <main><LayoutAnimate>{children}</LayoutAnimate></main>
           <Footer />
           <Analytics />
         </body>

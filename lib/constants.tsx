@@ -6,6 +6,7 @@ import type {
   ProcessStep,
   CatalogItem,
   PackagePlan,
+  PricingCard,
   WhyItem,
   Value,
   StackItem,
@@ -411,6 +412,64 @@ export const PACKAGES: PackagePlan[] = [
       "Implementación planificada a medida",
     ],
     ctaLabel: "Hablar con nosotros",
+  },
+];
+
+/* ─── Pricing Cards ──────────────────────────────────────────────── */
+export const PRICING_CARDS: PricingCard[] = [
+  {
+    id: "starter",
+    name: "Starter",
+    description: "Para negocios que quieren empezar. Una automatización lista en 72 horas.",
+    setupPrice: 350_000,
+    monthlyPrice: 150_000,
+    popular: false,
+    ctaLabel: "Comenzar",
+    features: [
+      "1 automatización sencilla a elegir",
+      "Integración con WhatsApp o correo",
+      "1 reporte automático mensual",
+      "Soporte por WhatsApp 5×8",
+      "Implementación en 72 horas",
+    ],
+    waMessage: "Hola, me interesa el paquete Starter de AXUSIA",
+  },
+  {
+    id: "pro",
+    name: "Pro",
+    description: "Para negocios con procesos complejos que necesitan múltiples automatizaciones.",
+    setupPrice: 950_000,
+    monthlyPrice: 250_000,
+    popular: true,
+    ctaLabel: "Comenzar",
+    features: [
+      "Hasta 3 automatizaciones integradas",
+      "Agente WhatsApp con IA incluido",
+      "Dashboard de monitoreo básico",
+      "Reportes automáticos semanales",
+      "Soporte prioritario 7×12",
+      "Implementación en 7 días",
+    ],
+    waMessage: "Hola, me interesa el paquete Pro de AXUSIA",
+  },
+  {
+    id: "full",
+    name: "Full",
+    description: "Para empresas que quieren escalar. Sistema completo multi-proceso a medida.",
+    setupPrice: 2_500_000,
+    monthlyPrice: 400_000,
+    popular: false,
+    isDesde: true,
+    ctaLabel: "Hablar con nosotros",
+    features: [
+      "Sistema completo multi-proceso",
+      "Panel de administración propio",
+      "Base de datos dedicada",
+      "Integraciones con ERP o CRM existente",
+      "Soporte 7×24 con SLA garantizado",
+      "Implementación planificada a medida",
+    ],
+    waMessage: "Hola, me interesa el paquete Full de AXUSIA",
   },
 ];
 

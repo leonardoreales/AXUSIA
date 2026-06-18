@@ -1,13 +1,13 @@
 ---
-name: AXUS IA
-description: Servicios de inteligencia artificial para PYMEs colombianas
+name: AXUSIA
+description: Agencia de automatización IA para PYMEs colombianas
 colors:
-  pitch-black: "#080B10"
-  system-shell: "#0F1420"
-  deep-shell: "#161C2E"
-  layer-stack: "#1E2640"
-  signal-amber: "#E8943A"
-  active-pulse: "#4ECDC4"
+  midnight-navy: "#0C1228"
+  navy-surface: "#162854"
+  navy-surface2: "#1E3268"
+  navy-surface3: "#263C7A"
+  platinum-pearl: "#B4BDD2"
+  teal: "#4ECDC4"
   ghost-white: "#F0EEE8"
   static: "#7A8398"
   dead-channel: "#4A5168"
@@ -54,14 +54,14 @@ spacing:
   xl: "96px"
 components:
   button-primary:
-    backgroundColor: "{colors.signal-amber}"
-    textColor: "{colors.pitch-black}"
+    background: "linear-gradient(105deg,#6A7A98 0%,#A8B4C8 28%,#D8DCE6 52%,#FFFEF8 62%,#C8CED8 78%,#6A7A98 100%)"
+    textColor: "{colors.midnight-navy}"
     rounded: "{rounded.sharp}"
     padding: "0 36px"
     height: "54px"
   button-primary-hover:
-    backgroundColor: "#d4832e"
-    textColor: "{colors.pitch-black}"
+    background: "brightness(1.07) + shadow 0 4px 28px rgba(180,189,210,0.32)"
+    textColor: "{colors.midnight-navy}"
     rounded: "{rounded.sharp}"
     padding: "0 36px"
     height: "54px"
@@ -79,51 +79,54 @@ components:
     height: "44px"
 ---
 
-# Design System: AXUS IA
+# Design System: AXUSIA
 
 ## 1. Overview
 
-**Creative North Star: "El Terminal con Pulso"**
+**Creative North Star: "Midnight Navy + Platinum Pearl"**
 
-AXUS IA habita la estética del entorno de trabajo de alta precisión: la claridad del CLI, la densidad informativa de una workstation de ingeniería, la quietud funcional del terminal. No es oscuro por tendencia, es oscuro porque es el ambiente natural donde se construye y opera inteligencia artificial. El naranjo Signal Amber aparece como el cursor que parpadea en la línea de comandos: infrecuente, cargado de significado, siempre indicando que algo está listo para ejecutarse. El teal Active Pulse señala procesos en marcha, sistemas respondiendo, datos fluyendo.
+AXUSIA habita la estética del instrumento de precisión en su forma más refinada: la densidad de un tablero de control nocturno, la calidad de un reloj de ingeniería bajo luz fría, la quietud operacional de un centro de mando en plena función. El fondo Midnight Navy no es oscuridad genérica — es la profundidad del azul nocturno donde la inteligencia opera sin ruido. Platinum Pearl aparece como el filo de una herramienta de precisión: frío, exacto, presente solo donde guía una acción decisiva.
 
-El sistema rechaza tres caminos: el SaaS amigable-pastel (Canva, Notion) que diluye la propuesta técnica; las consultoras corporativas en azul marino que priorizan la distancia sobre la cercanía; y los clones de OpenAI con gradientes azul-púrpura que convirtieron "IA" en un género visual saturado. AXUS IA no declara que hace IA, demuestra que la hace con cada decisión de diseño.
+El sistema rechaza tres caminos: el SaaS amigable-pastel (Canva, Notion) que diluye la propuesta técnica; las consultoras corporativas en azul frío y distante (McKinsey, Accenture); y los clones de OpenAI con gradientes azul-púrpura que convirtieron "IA" en un género visual saturado. AXUSIA no imita el lenguaje visual de la IA hype — construye el suyo: cool-tone, premium, diferenciado. Donde los clones gritan neón, AXUSIA destella metal.
 
-La densidad es un valor, no un problema. Cada sección lleva información real, no relleno decorativo. Las superficies no tienen sombras convencionales: la profundidad emerge de capas tonales graduadas. El movimiento responde a interacciones, no improvisa coreografías.
+La densidad es un valor, no un problema. Cada sección lleva información real. Las superficies no tienen sombras convencionales: la profundidad emerge de capas de azul marino graduadas. El movimiento responde a interacciones, no improvisa coreografías.
 
 **Key Characteristics:**
-- Tema oscuro intencional, no derivativo del hype IA
-- Signal Amber y Active Pulse como señales operacionales, no decoración
+- Midnight Navy intencional — azul profundo, no negro absoluto — como fondo vivo
+- Platinum Pearl como señal fría de precisión: metálico, no caloroso, no neón
+- Teal (#4ECDC4) solo para estado funcional (disponibilidad): no como acento de diseño
 - Syne pesado (800) para display, DM Sans ligero (300) para cuerpo: la brecha es el motor de jerarquía
 - Esquinas casi rectas (2px): precisión sobre suavidad
-- Elevación tonal, sin box-shadow posicional en superficies
+- Elevación tonal via capas navy, sin box-shadow posicional en superficies
 - Grain textural sutil sobre el fondo (no glassmorphism)
 - Grain overlay en `body::after`: una textura de ambiente, nunca sobre componentes
 
-## 2. Colors: La Paleta Operacional
+## 2. Colors: La Paleta de Precisión
 
-Dos señales activas sobre una escala de oscuros nocturnos. El color aparece cuando algo importa.
+Platinum Pearl sobre escala de azules nocturnos. El color aparece cuando algo importa.
 
 ### Primary
-- **Signal Amber** (`#E8943A`): El color de acción del sistema. Botones CTA, la "IA" del logotipo, etiquetas `.t-label`, el punto del chip de disponibilidad, el after del `.eyebrow`, selecciones de texto (`::selection`). Su temperatura cálida sobre negro profundo produce el contraste más alto del sistema. Usado con parsimonia para preservar su peso.
+- **Platinum Pearl** (`#B4BDD2`): El acento del sistema. Botones CTA (en gradiente metálico), etiquetas `.t-label`, el after del `.eyebrow`, selecciones de texto (`::selection`). Temperatura fría sobre navy profundo — contraste sin agresividad. Su cualidad metálica le da peso sin calor. Usado con parsimonia para preservar su peso.
 
 ### Secondary
-- **Active Pulse** (`#4ECDC4`): Señal de proceso activo. Indicadores de estado secundario, acentos en secciones sin CTA primario, elementos que denotan "sistema respondiendo". Su temperatura fría contrasta con el calor del ámbar y distingue dos tipos de energía: acción (ámbar) y proceso (teal).
+- **Teal** (`#4ECDC4`): Solo para estado funcional. Chip de disponibilidad "Disponible en Barranquilla". No es un acento de diseño — es una señal de proceso activo. No debe aparecer en layout, tipografía, ni decoración.
+
+  **Excepción documentada:** en componentes demo que representan flujos de sistema vivo (como `OperationalProof` en el Hero), teal puede usarse como señal de "sistema respondiendo" — WhatsApp en línea, flujos en ejecución, métricas activas, conectores de nodo. Fuera de contextos demo técnicos, la regla se mantiene.
 
 ### Neutral
-- **Pitch Black** (`#080B10`): Fondo de página. El nivel cero de la jerarquía tonal. El canvas del sistema.
-- **System Shell** (`#0F1420`): Primera superficie — tarjetas en reposo, barra de navegación, footer.
-- **Deep Shell** (`#161C2E`): Segunda superficie — paneles expandidos, contenedores internos, hover de tarjetas.
-- **Layer Stack** (`#1E2640`): Tercera superficie — elementos elevados, active states de superficie.
-- **Ghost White** (`#F0EEE8`): Texto principal de cuerpo. Ligeramente cálido para reducir fatiga visual en sesiones largas sobre fondo muy oscuro. Contraste vs Pitch Black: 18.7:1 (WCAG AAA ✓).
-- **Static** (`#7A8398`): Texto secundario, captions, metadatos, placeholders. Solo para texto ≥18px o bold ≥14px sobre Pitch Black (contraste 4.8:1, WCAG AA ✓ para texto grande). Para texto pequeño normal: preferir Ghost White.
+- **Midnight Navy** (`#0C1228`): Fondo de página. El nivel cero de la jerarquía tonal. Azul profundo, no negro puro — la diferencia es perceptible y es parte de la identidad.
+- **Navy Surface** (`#162854`): Primera superficie — tarjetas en reposo, barra de navegación, footer.
+- **Navy Surface 2** (`#1E3268`): Segunda superficie — paneles expandidos, contenedores internos, hover de tarjetas.
+- **Navy Surface 3** (`#263C7A`): Tercera superficie — elementos elevados, active states de superficie.
+- **Ghost White** (`#F0EEE8`): Texto principal de cuerpo. Ligeramente cálido para reducir fatiga visual. Contraste vs Midnight Navy: ≥17:1 (WCAG AAA ✓).
+- **Static** (`#7A8398`): Texto secundario, captions, metadatos, placeholders. Solo para texto ≥18px o bold ≥14px. Para texto pequeño normal: preferir Ghost White.
 - **Dead Channel** (`#4A5168`): Texto terciario, elementos deshabilitados, bordes de texto. Nunca para texto informativo en tamaño body.
 
 ### Named Rules
 
-**The Signal Rule.** Signal Amber ocupa ≤15% de cualquier pantalla. Su poder viene de la escasez: cuando aparece, indica acción. Diluirlo en fondos, texto de soporte o decoración destruye esa señal y convierte el sistema en lo que rechaza.
+**The Pearl Rule.** Platinum Pearl ocupa ≤20% de cualquier pantalla. Su poder viene de la escasez y de su cualidad metálica: cuando aparece, señala precisión y acción. Diluirlo en fondos o decoración destruye esa señal.
 
-**The Tonal Depth Rule.** La profundidad emerge de la escala de superficies (pitch-black → system-shell → deep-shell → layer-stack), no de sombras con offset. Nunca usar `box-shadow` con `y-offset` positivo en superficies de contenido. El glow difuso de acento en botones y la transición entre niveles tonales es el único vocabulario de profundidad.
+**The Tonal Depth Rule.** La profundidad emerge de la escala de azules navy (midnight-navy → navy-surface → navy-surface2 → navy-surface3), no de sombras con offset. Nunca usar `box-shadow` con `y-offset` en superficies de contenido. La sombra direccional sutil en botones primarios es el único vocabulario de profundidad.
 
 ## 3. Typography: Precisión y Flujo
 
@@ -137,7 +140,7 @@ Dos señales activas sobre una escala de oscuros nocturnos. El color aparece cua
 - **Headline** (Syne 700, clamp(1.75rem → 3rem), lh 1.1, -0.5px tracking): Títulos de sección dentro de páginas. El pilar de la jerarquía de contenido. `text-wrap: balance`.
 - **Title** (Syne 600, clamp(1.25rem → 1.75rem), lh 1.2, -0.25px tracking): Títulos de tarjeta, nombre de servicio, encabezados de panel de detalle.
 - **Body** (DM Sans 300, 1rem / 16px, lh 1.6): Todo el texto corrido. Máximo 65ch de ancho de línea. `text-wrap: pretty` en párrafos largos.
-- **Label** (Syne 600, 11px, 2px tracking, uppercase, Signal Amber): Etiquetas de categoría, eyebrows de sección. Uso máximo en 40% de las secciones de una página.
+- **Label** (Syne 600, 11px, 2px tracking, uppercase, Platinum Pearl): Etiquetas de categoría, eyebrows de sección. Uso máximo en 40% de las secciones de una página.
 
 ### Named Rules
 
@@ -147,17 +150,17 @@ Dos señales activas sobre una escala de oscuros nocturnos. El color aparece cua
 
 ## 4. Elevation: Profundidad Tonal
 
-AXUS IA es un sistema de superficie plana con profundidad tonal graduada. No usa `box-shadow` con offset posicional en superficies. La jerarquía espacial se expresa a través de cuatro niveles de color de fondo: Pitch Black → System Shell → Deep Shell → Layer Stack. Subir un nivel en la jerarquía de contenido significa moverse un paso en esa escala, nunca flotarse sobre ella con sombras.
+AXUSIA es un sistema de superficie plana con profundidad tonal graduada en azul navy. No usa `box-shadow` con offset posicional en superficies. La jerarquía espacial se expresa a través de cuatro niveles de color de fondo: Midnight Navy → Navy Surface → Navy Surface 2 → Navy Surface 3. Subir un nivel en la jerarquía de contenido significa moverse un paso en esa escala, nunca flotarse sobre ella con sombras.
 
-La única excepción son los **halos de acento**: glows radiales difusos exclusivamente en botones primarios y sus estados hover (`box-shadow: 0 0 28px rgba(232,148,58,0.30)` en reposo, `0 0 40px rgba(232,148,58,0.50)` en hover). No son sombras de elevación, son señales de energía y estado.
+La única excepción son las **sombras direccionales** en botones primarios: `box-shadow: 0 2px 16px rgba(180,189,210,0.18)` en reposo, `0 4px 28px rgba(180,189,210,0.32)` en hover. Son sombras sutiles y direccionales — no glows de neón, no radiales puras. Señalan presencia física del botón, no energía artificial.
 
 ### Shadow Vocabulary
-- **Accent Glow — reposo** (`box-shadow: 0 0 28px rgba(232,148,58,0.30)`): Solo en `button-primary`. Indica acción disponible.
-- **Accent Glow — hover** (`box-shadow: 0 0 40px rgba(232,148,58,0.50)`): Amplifica la señal en el estado hover del `button-primary`.
+- **Pearl Shadow — reposo** (`box-shadow: 0 2px 16px rgba(180,189,210,0.18)`): Solo en `button-primary`. Sutil, direccional. Indica acción disponible.
+- **Pearl Shadow — hover** (`box-shadow: 0 4px 28px rgba(180,189,210,0.32)`): Amplifica la señal en el estado hover del `button-primary`.
 
 ### Named Rules
 
-**The Flat-By-Default Rule.** Las superficies son planas en reposo. Los halos de acento solo existen en botones primarios. Usar `box-shadow` con offset Y positivo en tarjetas o paneles importa la estética SaaS-flotante que el sistema rechaza explícitamente.
+**The Flat-By-Default Rule.** Las superficies son planas en reposo. Las sombras de acento solo existen en botones primarios y son direccionales, no radiales. Usar `box-shadow: 0 0 ...` (glow neon) está prohibido en todo el sistema. Usar `box-shadow` con offset Y en tarjetas o paneles importa la estética SaaS-flotante que el sistema rechaza.
 
 ## 5. Components
 
@@ -166,68 +169,84 @@ La única excepción son los **halos de acento**: glows radiales difusos exclusi
 Forma casi ortogonal (2px radius). La angularidad es deliberada: precisión de herramienta, no suavidad de app de consumo. Tres variantes establecen jerarquía de intención clara.
 
 - **Shape:** 2px radius. No redondear más — la ortogonalidad es identidad del sistema.
-- **Primary:** Signal Amber fill (`#E8943A`), texto Pitch Black. Altura 54px (lg), 44px (md), 36px (sm). Glow difuso en reposo. Hover: ámbar más oscuro (`#d4832e`) + glow amplificado + shine sweep blanco-transparente. Mouse-follow spring (stiffness 240, damping 22). Tap scale 0.97.
-- **Secondary:** Fondo transparente, borde `rgba(255,255,255,0.18)`, texto Ghost White. Hover: borde Signal Amber, texto Signal Amber, micro-glow tenue.
+- **Primary:** Gradiente metálico platinum pearl (`linear-gradient(105deg,#6A7A98 0%,#A8B4C8 28%,#D8DCE6 52%,#FFFEF8 62%,#C8CED8 78%,#6A7A98 100%)`), texto Midnight Navy (`#0C1228`). Altura 54px (lg), 44px (md), 36px (sm). Sombra direccional `0 2px 16px rgba(180,189,210,0.18)` en reposo. Hover: `brightness(1.07)` + sombra amplificada + shine sweep blanco-transparente (`via-white/15`). Mouse-follow spring (stiffness 240, damping 22, mass 0.5). Tap scale 0.97.
+- **Secondary:** Fondo transparente, borde `rgba(255,255,255,0.18)`, texto Ghost White. Hover: borde Platinum Pearl, texto Platinum Pearl, micro-sombra `0 0 20px rgba(180,189,210,0.12)`.
 - **Ghost:** Fondo transparente, sin borde, texto Static. Hover: texto Ghost White. Para acciones de menor jerarquía.
-- **Focus:** Ring 2px Signal Amber, `outline-offset: 3px`, sobre Pitch Black.
-- **Disabled / Loading:** Opacidad 40%, `cursor: not-allowed`. El spinner de loading usa el mismo Signal Amber.
+- **Focus:** Ring 2px Platinum Pearl (`#B4BDD2`), `ring-offset-2 ring-offset-bg`, sobre Midnight Navy.
+- **Disabled / Loading:** Opacidad 40%, `cursor: not-allowed`. El spinner usa Ghost White.
 
 ### Chips & Tags
 
-- **Chip de disponibilidad:** Fondo `rgba(232,148,58,0.15)`, texto Ghost White, borde `rgba(232,148,58,0.20)`. Punto parpadeante en Signal Amber (`blink` keyframe). Uno por página. Señal de estado real, no decoración.
-- **Tag:** Fondo `bg-surface2` (`#161C2E`), texto Static, sin borde. Categorización visual sin peso jerárquico.
+- **Chip de disponibilidad (available):** Fondo `rgba(78,205,196,0.07)`, texto teal (`#4ECDC4`), borde `rgba(78,205,196,0.20)`. Punto parpadeante en teal (`blink` 2s). Uno por página. Señal funcional de estado real, no decoración.
+- **Chip live:** Fondo `rgba(180,189,210,0.07)`, texto Platinum Pearl, borde `rgba(180,189,210,0.20)`. Punto parpadeante en platinum (`blink` 1.5s).
+- **Tag:** Fondo `navy-surface2` (`#1E3268`), texto Static, sin borde. Categorización visual sin peso jerárquico.
 
 ### Cards / Containers
 
 - **Corner Style:** 2px para tarjetas de datos y servicio; 4px para contenedores de sección más amplios.
-- **Background:** `system-shell` (`#0F1420`) en reposo; `deep-shell` (`#161C2E`) en hover y paneles expandidos.
+- **Background:** `navy-surface` (`#162854`) en reposo; `navy-surface2` (`#1E3268`) en hover y paneles expandidos.
 - **Shadow:** Ninguna. Borde `rgba(255,255,255,0.07)` para delimitación. En hover: borde `rgba(255,255,255,0.12)`.
 - **Internal Padding:** 24–32px desktop, 16–20px mobile.
-- **Transición de hover:** `background-color 200ms ease`, `border-color 200ms ease`. Sin transform ni sombra.
+- **Transición de hover:** `background-color 200ms ease`, `border-color 200ms ease`. Sin transform ni sombra en tarjetas.
+
+### Ledger Layout (preferred over cards)
+
+Cuando el contenido es un catálogo o lista de ítems con jerarquía clara, usar layout de ledger en lugar de card grid:
+- `flex flex-col divide-y divide-border border-t` en el contenedor
+- Grid por fila: `[columna-fija_minmax(0,1fr)_auto]` para rail | contenido central | precio/acción
+- No usar 3-column equal card grids — están prohibidos por el sistema
 
 ### Inputs / Fields
 
-- **Style:** Fondo `system-shell` o `deep-shell`, borde `rgba(255,255,255,0.18)`, radius 4px. Sin fondo blanco bajo ninguna circunstancia.
-- **Focus:** Outline 2px Signal Amber, `outline-offset: 2px`. El borde cambia a `border-accent`.
-- **Placeholder:** Static (`#7A8398`) — verificar ≥4.5:1 sobre el fondo exacto del campo.
+- **Style:** Fondo `navy-surface` o `navy-surface2`, borde `rgba(255,255,255,0.18)`, radius 4px. Sin fondo blanco.
+- **Focus:** Outline 2px Platinum Pearl, `outline-offset: 2px`. El borde cambia a `border-accent`.
+- **Placeholder:** Static (`#7A8398`).
 - **Error:** Texto de error en rojo funcional (`#E55B5B`), 13px DM Sans 400, debajo del campo. Sin background rojo.
 - **Disabled:** Opacidad 50%, cursor `not-allowed`, sin hover.
 
 ### Navigation
 
-- **Style:** Posición fija, fondo Pitch Black con leve transparencia (`rgba(8,11,16,0.92)`) + `backdrop-filter: blur(12px)`. Auto-hide en scroll hacia abajo, reveal en scroll hacia arriba.
-- **Typography:** DM Sans 400, 14px, texto Ghost White. Link activo: Signal Amber. Hover: Signal Amber con `transition 200ms`.
-- **Mobile:** Menú desplegable desde arriba (`slideDown` keyframe). Links en Syne 700, tamaño mayor para impacto táctil. Overlay oscuro sobre el contenido.
-- **Logo en nav:** Tamaño `sm`, sin animación GSAP (la animación solo se ejecuta en el primer load de la sesión).
+- **Style:** Posición fija, fondo Midnight Navy con leve transparencia (`rgba(12,18,40,0.92)`) + `backdrop-filter: blur(12px)`. Auto-hide en scroll hacia abajo, reveal en scroll hacia arriba.
+- **Typography:** DM Sans 400, 14px, texto Ghost White. Link activo: Platinum Pearl. Hover: Platinum Pearl con `transition 200ms`.
+- **Mobile:** Menú desplegable (`clipPath` curtain). Links en Syne 700. Overlay oscuro sobre el contenido.
+- **Logo en nav:** Tamaño `sm`, sin animación GSAP (la animación solo en el primer load de sesión).
 
-### Hexagon Logo (Componente Signature)
+### Hexagon Logo + Wordmark (Componente Signature)
 
-El mark es un hexágono SVG con animación de draw GSAP al cargar la página — `strokeDashoffset` de 100% a 0% en 1.2s con ease expo. La wordmark "AXUS**IA**" usa Syne 800 con "IA" en Signal Amber. Tres tamaños: `sm` (nav/footer, 28px mark), `md` (default, 40px), `lg` (hero, 64px). La animación de draw es la única animación auto-ejecutable en carga de página; todos los demás elementos usan `whileInView`.
+El mark es un hexágono SVG con animación de draw GSAP al cargar — `strokeDashoffset` de 100% a 0% en 1.2s ease expo. La wordmark "AXUS**IA**" usa Syne 800: "AXUS" en gradiente platinum pearl sweep, "IA" en gradiente grafito premium. Mouse parallax: 6 capas de extrusión en motion.div, face se mueve 25% menos (ilusión de pop-out 3D). Configuración sutil: 6 capas, offset 1.0/0.7px por capa, opacidad 0.28, spring `stiffness:60 damping:28`. Tres tamaños: `sm` (nav/footer, 28px), `md` (40px), `lg` (hero, 64px).
+
+**Wordmark gradient stops (componente firma — no reutilizar fuera del Logo):**
+- **AXUS** (platinum sweep): `linear-gradient(105deg, #5A5A5A 0%, #B8B8B8 20%, #EFEFEF 38%, #FAFAF8 50%, #EFEFEF 62%, #B8B8B8 80%, #5A5A5A 100%)` · Extrusion: `#343438`
+- **IA** (grafito premium): `linear-gradient(135deg, #1A1E24 0%, #252B33 20%, #3A4050 40%, #626874 60%, #848A96 75%, #5A6070 88%, #2E333C 100%)` · Extrusion: `#1E2535` · Peak asimétrico al 75% evita banda blanca en la letra A.
 
 ### Scroll Reveal
 
-Fade-up desde `translateY(28px)`, opacidad 0→1, duración 650ms, easing expo (`cubic-bezier(0.16,1,0.3,1)`). `viewport={{ once: true }}` — solo se activa una vez. Delays escalonados: `.reveal-d1` (100ms), `.reveal-d2` (200ms), `.reveal-d3` (300ms). Las transiciones base incluyen `@media (prefers-reduced-motion: reduce)` con crossfade instantáneo como alternativa.
+Fade-up desde `translateY(28px)`, opacidad 0→1, duración 650ms, easing expo (`cubic-bezier(0.16,1,0.3,1)`). `viewport={{ once: true }}`. Delays escalonados: 100ms, 200ms, 300ms. `@media (prefers-reduced-motion: reduce)` con crossfade instantáneo como alternativa.
 
 ## 6. Do's and Don'ts
 
 ### Do:
-- **Do** mantener Signal Amber en ≤15% de la superficie visible de cualquier pantalla. Su poder es su escasez.
-- **Do** usar la escala tonal (pitch-black → layer-stack) para indicar jerarquía de profundidad. Nunca sombras posicionales en superficies.
-- **Do** verificar contraste WCAG AAA (7:1) para todo texto body. Ghost White (#F0EEE8) sobre Pitch Black (#080B10) = 18.7:1 ✓. Static (#7A8398) sobre Pitch Black = 4.8:1 — solo para texto grande (≥18px).
+- **Do** mantener Platinum Pearl en ≤20% de la superficie visible de cualquier pantalla. Su poder es su escasez y su cualidad metálica.
+- **Do** usar la escala tonal navy (midnight-navy → navy-surface3) para indicar jerarquía de profundidad. Nunca sombras posicionales en superficies.
+- **Do** verificar contraste WCAG AAA (7:1) para todo texto body. Ghost White (#F0EEE8) sobre Midnight Navy (#0C1228) ≥17:1 ✓. Static (#7A8398) sobre Midnight Navy ≈4.8:1 — solo para texto grande (≥18px o bold ≥14px).
 - **Do** usar Syne exclusivamente para titulares, labels y logotipo. DM Sans para todo texto de cuerpo y UI.
 - **Do** mantener radius en 2px en componentes de acción (botones, chips, badges). La forma ortogonal es identidad.
 - **Do** incluir `prefers-reduced-motion: reduce` en todas las animaciones.
 - **Do** nombrar cada CTA con verbo + objeto: "Solicitar cotización", "Ver servicios", "Enviar mensaje".
 - **Do** usar `text-wrap: balance` en H1–H3 para distribución uniforme de líneas.
+- **Do** preferir layouts tipo ledger (`divide-y`) sobre 3-column equal card grids.
+- **Do** mantener el efecto 3D del wordmark sutil: insinuado al mover el cursor, nunca anunciado.
 
 ### Don't:
-- **Don't** usar paleta pastel, formas redondeadas (>8px en acciones) o tono amigable-casual. AXUS IA no es Canva ni Notion — es una herramienta técnica para negocios.
-- **Don't** usar azul marino, gris corporativo frío, o estética de consultora distante (McKinsey, Accenture). La cercanía técnica es un diferenciador activo.
-- **Don't** usar gradientes azul-púrpura, neón sobre negro, o glows en colores distintos al Signal Amber/Active Pulse. Ese es el lane de los clones de OpenAI — saturado y exactamente lo que AXUS IA no es.
-- **Don't** usar `border-left` o `border-right` > 1px como stripe de acento decorativo en tarjetas o callouts. Reemplazar con fondo tonal.
-- **Don't** usar `background-clip: text` con gradiente. Énfasis de texto = Signal Amber sólido o peso Syne 800. Gradient text está prohibido en el sistema.
-- **Don't** glassmorphism decorativo. El grain en `body::after` es la única textura del sistema. Blurs sobre tarjetas o paneles de contenido son ruido.
-- **Don't** poner `.t-label` / `.eyebrow` en cada sección. Máximo en el 40% de las secciones de una página. El eyebrow en cada sección es AI grammar.
-- **Don't** usar números de sección (01 / 02 / 03) como scaffolding por defecto. Solo cuando la secuencia numeral lleva información real (un proceso ordenado, un flujo con pasos).
-- **Don't** usar frases vacías de marketing: "transformamos tu negocio", "soluciones de vanguardia", "ecosistema inteligente". Cada pieza de copy debe decir algo verificable y específico.
-- **Don't** aplicar la animación GSAP de draw del logo en cualquier otro contexto. Es la firma del logo, no un patrón reutilizable.
+- **Don't** usar paleta pastel, formas redondeadas (>8px en acciones) o tono amigable-casual. AXUSIA no es Canva ni Notion.
+- **Don't** usar gradientes azul-púrpura, neón sobre negro, o glows radiales (`box-shadow: 0 0 ...`). Ese es el lane de los clones de IA — AXUSIA usa sombras direccionales, no neón.
+- **Don't** usar Signal Amber (#E8943A) ni colores naranja/cálidos. La paleta migró a Midnight Navy + Platinum Pearl — los tokens amber están deprecados.
+- **Don't** usar `border-left` o `border-right` > 1px como stripe de acento decorativo. Reemplazar con fondo tonal.
+- **Don't** usar `background-clip: text` con gradiente arbitrario. Solo se permite en el wordmark AXUS (gradiente platinum definido) y en IA (gradiente grafito definido). Gradient text libre está prohibido.
+- **Don't** glassmorphism decorativo. El grain en `body::after` es la única textura del sistema. Blurs sobre tarjetas son ruido.
+- **Don't** poner `.t-label` / `.eyebrow` en cada sección. Máximo en el 40% de las secciones de una página.
+- **Don't** usar números de sección (01 / 02 / 03) como scaffolding por defecto. Solo cuando la secuencia numeral lleva información real.
+- **Don't** usar frases vacías de marketing: "transformamos tu negocio", "soluciones de vanguardia", "ecosistema inteligente". Copy verificable y específico.
+- **Don't** aplicar la animación GSAP de draw del logo en cualquier otro contexto. Es la firma del logo.
+- **Don't** aumentar las capas o intensidad del efecto 3D del wordmark. La dirección ante cualquier feedback es MENOS — menos capas, menos opacidad, menos rango. El efecto se insinúa, no grita.
+- **Don't** usar 3-column equal card grids. Usar ledger, grid fraccionado, o asimetría real.

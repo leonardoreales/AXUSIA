@@ -49,6 +49,19 @@ export interface PackagePlan {
   ctaLabel: string;
 }
 
+export interface PricingCard {
+  id: string;
+  name: string;
+  description: string;
+  setupPrice: number;
+  monthlyPrice: number;
+  popular?: boolean;
+  isDesde?: boolean;
+  ctaLabel: string;
+  features: string[];
+  waMessage: string;
+}
+
 /* ─── Homepage ───────────────────────────────────────────────────── */
 import type { ReactNode } from "react";
 

@@ -1,8 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
+import { motion, useReducedMotion } from "framer-motion";
 import { Button } from "@/components/ui/Button";
-import { ParticleCanvas } from "@/components/ui/particle-hero";
+
+const HexMark3D = dynamic(
+  () => import("@/components/ui/HexMark3D").then(m => ({ default: m.HexMark3D })),
+  { ssr: false }
+);
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
@@ -277,10 +282,20 @@ function OperationalProof() {
 }
 
 export function Hero() {
+  const rm = useReducedMotion();
+
+  const fadeIn = (y = 0, delay = 0, duration = 0.55) => ({
+    initial: rm ? { opacity: 0 } : { opacity: 0, y },
+    animate: { opacity: 1, y: 0 },
+    transition: rm ? { duration: 0.15 } : { duration, delay, ease: EASE },
+  });
+
   return (
     <section className="relative min-h-[100dvh] overflow-hidden pt-[72px]">
       <div aria-hidden className="absolute inset-0 pointer-events-none">
-        <ParticleCanvas className="absolute inset-0" />
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[480px] h-[480px] pointer-events-none opacity-20 hidden lg:block">
+          <HexMark3D />
+        </div>
         <div
           className="absolute right-[-12rem] top-[-10rem] h-[34rem] w-[34rem] rounded-full"
           style={{ background: "radial-gradient(circle, rgba(180,189,210,0.18) 0%, transparent 64%)" }}
@@ -303,9 +318,7 @@ export function Hero() {
         <div className="grid min-h-[calc(100dvh-9rem)] grid-cols-1 items-center gap-12 xl:grid-cols-[1fr_1.1fr] xl:gap-14">
           <div className="flex max-w-[640px] flex-col gap-7">
             <motion.div
-              initial={{ opacity: 0, y: -12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, ease: EASE }}
+              {...fadeIn(-12, 0, 0.55)}
               className="inline-flex w-fit items-center gap-2 rounded-[2px] border border-[rgba(78,205,196,0.22)] bg-[rgba(78,205,196,0.08)] px-3 py-2 font-[family-name:var(--font-syne)] text-[11px] font-semibold uppercase tracking-[0.14em] text-teal"
             >
               <PinIcon />
@@ -314,9 +327,7 @@ export function Hero() {
 
             <motion.h1
               className="t-display text-[clamp(2.5rem,3.75vw,3.75rem)]"
-              initial={{ opacity: 0, y: 32 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.78, delay: 0.1, ease: EASE }}
+              {...fadeIn(32, 0.1, 0.78)}
             >
               Transforma tus operaciones manuales{" "}
               <span className="text-accent">con IA.</span>
@@ -324,22 +335,18 @@ export function Hero() {
 
             <motion.p
               className="max-w-[520px] font-[family-name:var(--font-dm)] text-[1.08rem] leading-relaxed text-text/75"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.68, delay: 0.2, ease: EASE }}
+              {...fadeIn(20, 0.2, 0.68)}
             >
-              Convertimos tus procesos manuales en una{" "}
+              Convertimos tus flujos operativos en una{" "}
               <strong className="font-semibold text-text/90">
-                infraestructura autónoma que escala sin límites.
+                infraestructura autónoma que trabaja sola.
               </strong>{" "}
               Resultados reales, de forma ágil. Sin código de tu lado.
             </motion.p>
 
             <motion.div
               className="flex flex-wrap items-center gap-4"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.32, ease: EASE }}
+              {...fadeIn(16, 0.32, 0.6)}
             >
               <Button variant="primary" size="lg" href="/contacto">
                 Agendar diagnóstico
@@ -351,9 +358,7 @@ export function Hero() {
 
             <motion.div
               className="grid grid-cols-1 gap-3 pt-1 sm:grid-cols-3"
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.55, delay: 0.44, ease: EASE }}
+              {...fadeIn(12, 0.44, 0.55)}
             >
               {SIGNALS.map((signal) => (
                 <div
@@ -372,18 +377,14 @@ export function Hero() {
 
             <motion.p
               className="max-w-[440px] border-t border-border pt-5 text-[13px] text-muted"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.55, delay: 0.56, ease: EASE }}
+              {...fadeIn(0, 0.56, 0.55)}
             >
               Somos de Barranquilla. Entendemos tu negocio, tu mercado y tu gente.
             </motion.p>
           </div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.96, y: 28 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.9, delay: 0.22, ease: EASE }}
+            {...fadeIn(28, 0.22, 0.65)}
             className="min-w-0"
           >
             <OperationalProof />
@@ -394,7 +395,7 @@ export function Hero() {
       <div
         aria-hidden
         className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-        style={{ background: "linear-gradient(to bottom, transparent, #080B10)" }}
+        style={{ background: "linear-gradient(to bottom, transparent, var(--color-bg))" }}
       />
     </section>
   );

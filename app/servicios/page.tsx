@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { PageHeader } from "@/components/layout/PageHeader";
 import { CatalogGrid } from "@/components/sections/servicios/CatalogGrid";
 import { TrustStrip } from "@/components/sections/servicios/TrustStrip";
-import { PackagesGrid } from "@/components/sections/servicios/PackagesGrid";
+import { PricingCards } from "@/components/sections/servicios/PricingCards";
 import { CtaBanner } from "@/components/sections/home/CtaBanner";
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export default function ServiciosPage() {
       </section>
 
       <TrustStrip />
-      <PackagesGrid />
+      <PricingCards />
       <CtaBanner hideEyebrow />
     </>
   );

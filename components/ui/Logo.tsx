@@ -2,7 +2,7 @@
 
 import { useRef, useEffect, useId } from "react";
 import Link from "next/link";
-import gsap from "gsap";
+
 
 interface LogoProps {
   size?: "sm" | "md" | "lg";
@@ -47,58 +47,64 @@ export function Logo({
 
   useEffect(() => {
     if (!animated) return;
+    let mounted = true;
+    let cleanup: (() => void) | undefined;
 
-    const hex   = hexRef.current;
-    const fill  = hexFillRef.current;
-    const legL  = legLRef.current;
-    const legR  = legRRef.current;
-    const l2    = layer2Ref.current;
-    const l3    = layer3Ref.current;
-    if (!hex || !fill || !legL || !legR || !l2 || !l3) return;
+    import("gsap").then(({ default: gsap }) => {
+      if (!mounted) return;
+      const hex   = hexRef.current;
+      const fill  = hexFillRef.current;
+      const legL  = legLRef.current;
+      const legR  = legRRef.current;
+      const l2    = layer2Ref.current;
+      const l3    = layer3Ref.current;
+      if (!hex || !fill || !legL || !legR || !l2 || !l3) return;
 
-    const ctx = gsap.context(() => {
-      const hLen  = hex.getTotalLength();
-      const llLen = legL.getTotalLength();
-      const lrLen = legR.getTotalLength();
+      const ctx = gsap.context(() => {
+        const hLen  = hex.getTotalLength();
+        const llLen = legL.getTotalLength();
+        const lrLen = legR.getTotalLength();
 
-      // ── Initial state ──
-      gsap.set(hex,  { strokeDasharray: hLen,  strokeDashoffset: hLen });
-      gsap.set(legL, { strokeDasharray: llLen, strokeDashoffset: llLen });
-      gsap.set(legR, { strokeDasharray: lrLen, strokeDashoffset: lrLen });
-      gsap.set(fill, { opacity: 0 });
-      // Holographic layers: start small (deep) and blurred
-      gsap.set(l3, { opacity: 0, scale: L3S, transformOrigin: "24px 24px", filter: "blur(1.8px)" });
-      gsap.set(l2, { opacity: 0, scale: L2S, transformOrigin: "24px 24px", filter: "blur(0.7px)" });
+        // ── Initial state ──
+        gsap.set(hex,  { strokeDasharray: hLen,  strokeDashoffset: hLen });
+        gsap.set(legL, { strokeDasharray: llLen, strokeDashoffset: llLen });
+        gsap.set(legR, { strokeDasharray: lrLen, strokeDashoffset: lrLen });
+        gsap.set(fill, { opacity: 0 });
+        // Holographic layers: start small (deep) and blurred
+        gsap.set(l3, { opacity: 0, scale: L3S, transformOrigin: "24px 24px", filter: "blur(1.8px)" });
+        gsap.set(l2, { opacity: 0, scale: L2S, transformOrigin: "24px 24px", filter: "blur(0.7px)" });
 
-      const tl = gsap.timeline({ delay: 0.15 });
+        const tl = gsap.timeline({ delay: 0.15 });
 
-      // ── Phase 1: Hex outline draws (1.05s) ──
-      tl.to(hex,  { strokeDashoffset: 0, duration: 1.05, ease: "power2.inOut" }, 0)
-        .to(fill, { opacity: 0.95,        duration: 0.95, ease: "power2.out"  }, 0.12)
-        // Legs shoot from apex as hex finishes
-        .to(legL, { strokeDashoffset: 0, duration: 0.52, ease: "power3.out"  }, 1.0)
-        .to(legR, { strokeDashoffset: 0, duration: 0.52, ease: "power3.out"  }, 1.12)
+        // ── Phase 1: Hex outline draws (1.05s) ──
+        tl.to(hex,  { strokeDashoffset: 0, duration: 1.05, ease: "power2.inOut" }, 0)
+          .to(fill, { opacity: 0.95,        duration: 0.95, ease: "power2.out"  }, 0.12)
+          // Legs shoot from apex as hex finishes
+          .to(legL, { strokeDashoffset: 0, duration: 0.52, ease: "power3.out"  }, 1.0)
+          .to(legR, { strokeDashoffset: 0, duration: 0.52, ease: "power3.out"  }, 1.12)
 
-      // ── Phase 3: Holographic layers materialize at depth (0.58s) ──
-        .to(l3, { opacity: 0.4, duration: 0.58, ease: "power2.out" }, 2.1)
-        .to(l2, { opacity: 0.5, duration: 0.58, ease: "power2.out" }, 2.1)
+        // ── Phase 3: Holographic layers materialize at depth (0.58s) ──
+          .to(l3, { opacity: 0.4, duration: 0.58, ease: "power2.out" }, 2.1)
+          .to(l2, { opacity: 0.5, duration: 0.58, ease: "power2.out" }, 2.1)
 
-      // ── Phase 4: Layers converge forward from behind ──
-        .to(l3, {
-          scale: 1, opacity: 0.65, filter: "blur(0px)",
-          duration: 1.7, ease: "expo.out",
-        }, 2.68)
-        .to(l2, {
-          scale: 1, opacity: 0.75, filter: "blur(0px)",
-          duration: 1.5, ease: "expo.out",
-        }, 3.03)
+        // ── Phase 4: Layers converge forward from behind ──
+          .to(l3, {
+            scale: 1, opacity: 0.65, filter: "blur(0px)",
+            duration: 1.7, ease: "expo.out",
+          }, 2.68)
+          .to(l2, {
+            scale: 1, opacity: 0.75, filter: "blur(0px)",
+            duration: 1.5, ease: "expo.out",
+          }, 3.03)
 
-      // ── Phase 5: Layers dissolve after merge ──
-        .to(l3, { opacity: 0, duration: 0.6, ease: "power2.inOut" }, 4.9)
-        .to(l2, { opacity: 0, duration: 0.6, ease: "power2.inOut" }, 4.9);
+        // ── Phase 5: Layers dissolve after merge ──
+          .to(l3, { opacity: 0, duration: 0.6, ease: "power2.inOut" }, 4.9)
+          .to(l2, { opacity: 0, duration: 0.6, ease: "power2.inOut" }, 4.9);
+      });
+      cleanup = () => ctx.revert();
     });
 
-    return () => ctx.revert();
+    return () => { mounted = false; cleanup?.(); };
   }, [animated]);
 
   const mark_el = (
