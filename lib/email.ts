@@ -2,7 +2,9 @@ import { Resend } from "resend";
 import type { ContactFormData } from "@/types";
 import { WA_BASE } from "@/lib/constants";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY ?? "");
+}
 
 function esc(text: string): string {
   return text.replace(/[&<>"']/g, (c) =>
@@ -27,7 +29,7 @@ export async function sendContactEmail(data: ContactFormData) {
     <p style="background:#f5f5f5;padding:16px;border-radius:8px">${esc(proceso).replace(/\n/g, "<br/>")}</p>
   `;
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: "AXUSIA <noreply@axusai.co>",
     to: ["hola@axusai.co"],
     replyTo: email,
@@ -71,7 +73,7 @@ export async function sendConfirmationEmail(to: string, nombre: string) {
     </div>
   `;
 
-  return resend.emails.send({
+  return getResend().emails.send({
     from: "AXUSIA <noreply@axusai.co>",
     to: [to],
     subject: "Recibimos tu solicitud — AXUSIA",
